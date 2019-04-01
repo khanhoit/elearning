@@ -1,0 +1,40 @@
+extends ../header-layout
+block content
+  // dang nhap
+  .container.d-flex.vh-100.align-items-center
+    #login.w-50.m-auto.w-50.m-auto
+      h2.text-center &Dstrok;&abreve;ng nh&#x1EAD;p
+      form(action='', method='POST')
+        input(name='hash', hidden='hidden')
+        .form-group.row
+          label.col-sm-2.col-form-label.p-0(for='userEmail') Email
+          .col-sm-10
+          input#userEmail.form-control(type='text', name='email', maxlength='34', value='', required='required', autofocus='autofocus')
+        .form-group.row
+          label.col-sm-2.col-form-label.p-0(for='inputPassword') Password
+          .col-sm-10
+          input#inputPassword.form-control(type='password', name='password', value='', maxlength='8', required='required')
+        .form-group.d-flex.justify-content-between
+          .d-flex
+            input#rememberPassword.d-flex.align-items-center(style='width:24px;height:24px;', type='checkbox', aria-label='Checkbox for following text input', name='rememberPassword', value='true')
+            label.p-0.d-flex.align-items-center.m-0(for='rememberPassword') Nh&#x1EDB; password
+          div
+            a(href='#') Qu&ecirc;n m&#x1EAD;t kh&#x1EA9;u?
+        .form-group.row
+          button.btn.btn-primary.btn-lg.btn-block &Dstrok;&abreve;ng Nh&#x1EAD;p  
+        hr
+        .d-flex.justify-content-between
+          p &Dstrok;&abreve;ng nh&#x1EAD;p b&#x1EB1;ng
+          a(href='./signup') &Dstrok;&abreve;ng k&yacute;
+        .form-group.d-flex
+          .mr-1
+            button.btn.btn-primary facebook
+          .mr-1
+            button.btn.btn-primary twitter
+          .mr-1
+            button.btn.btn-primary google
+  
+  
+  script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')

@@ -1,0 +1,89 @@
+extends header-user
+
+block content
+  link(rel='stylesheet', href='/stylesheets/flip.css')
+  br
+  .container
+    .row
+      .col-sm-8.col-12
+        .d-flex
+          .contain-card-learn
+            .front
+              img(src='https://picsum.photos/200/200', width='100%', alt='')
+            .back
+              | Lorem ipsum dolor sit amet.
+          .playSounditem.text-center.m-5(style='width: 40%')
+            | Nghe
+            audio(controls='', hidden='')
+              source(src='http://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3', type='audio/ogg')
+      .col-sm-4.col-12
+        // các bài giảng
+        div(style='height:400px; padding: 10px;   overflow-y: auto;')
+          a(href='#')
+            .row.m-2.p-2(style='border-bottom:2px solid gray')
+              .col-4
+                img(src='https://picsum.photos/150/150?random=1', width='100%', alt='')
+              .col-8
+                | Lorem ipsum dolor
+          a(href='#')
+            .row.m-2.p-2(style='border-bottom:2px solid gray')
+              .col-4
+                img(src='https://picsum.photos/150/150?random=1', width='100%', alt='')
+              .col-8
+                | Lorem ipsum dolor
+          a(href='#')
+            .row.m-2.p-2(style='border-bottom:2px solid gray')
+              .col-4
+                img(src='https://picsum.photos/150/150?random=1', width='100%', alt='')
+              .col-8
+                | Lorem ipsum dolor
+          a(href='#')
+            .row.m-2.p-2(style='border-bottom:2px solid gray')
+              .col-4
+                img(src='https://picsum.photos/150/150?random=1', width='100%', alt='')
+              .col-8
+                | Lorem ipsum dolor
+          a(href='#')
+            .row.m-2.p-2(style='border-bottom:2px solid gray')
+              .col-4
+                img(src='https://picsum.photos/150/150?random=1', width='100%', alt='')
+              .col-8
+                | Lorem ipsum dolor
+          a(href='#')
+            .row.m-2.p-2(style='border-bottom:2px solid gray')
+              .col-4
+                img(src='https://picsum.photos/150/150?random=1', width='100%', alt='')
+              .col-8
+                | Lorem ipsum dolor
+          a(href='#')
+            .row.m-2.p-2(style='border-bottom:2px solid gray')
+              .col-4
+                img(src='https://picsum.photos/150/150?random=1', width='100%', alt='')
+              .col-8
+                | Lorem ipsum dolor
+          a(href='#')
+            .row.m-2.p-2(style='border-bottom:2px solid gray')
+              .col-4
+                img(src='https://picsum.photos/150/150?random=1', width='100%', alt='')
+              .col-8
+                | Lorem ipsum dolor
+          a(href='#')
+            .row.m-2.p-2(style='border-bottom:2px solid gray')
+              .col-4
+                img(src='https://picsum.photos/150/150?random=1', width='100%', alt='')
+              .col-8
+                | Lorem ipsum dolor
+          a(href='#')
+            .row.m-2.p-2(style='border-bottom:2px solid gray')
+              .col-4
+                img(src='https://picsum.photos/150/150?random=1', width='100%', alt='')
+              .col-8
+                | Lorem ipsum dolor
+          a(href='#')
+            .row.m-2.p-2(style='border-bottom:2px solid gray')
+              .col-4
+                img(src='https://picsum.photos/150/150?random=1', width='100%', alt='')
+              .col-8
+                | Lorem ipsum dolor
+
+  script(src='/javascripts/playSound.js')

@@ -1,5 +1,72 @@
-extends layout
+extends header-layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  // slider baner
+  .container
+    #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators
+        li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+        li(data-target='#carouselExampleIndicators', data-slide-to='1')
+        li(data-target='#carouselExampleIndicators', data-slide-to='2')
+      .carousel-inner
+        .carousel-item.active(style='')
+          img.d-block.w-100(src='https://picsum.photos/1200/400?random=1', alt='First slide')
+        .carousel-item
+          img.d-block.w-100(src='https://picsum.photos/1200/400?random=2', alt='Second slide')
+        .carousel-item
+          img.d-block.w-100(src='https://picsum.photos/1200/400?random=3', alt='Third slide')
+      a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.sr-only Previous
+      a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.sr-only Next
+  // giới thiệu phương pháp
+  br
+  .container
+    div
+      h4.text-center Gi&#x1EDB;i thi&#x1EC7;u ph&#x1B0;&#x1A1;ng ph&aacute;p h&#x1ECD;c flashcard
+      br
+      .row.text-center
+        .col-12.col-sm-6
+          img(src='https://picsum.photos/1400/400?random=5', width='80%', alt='', srcset='')
+        .col-12.col-sm-6
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nemo facere earum iste reprehenderit ratione itaque, error ullam nihil quaerat et, nulla modi consectetur architecto beatae! Repellendus atque earum omnis.
+        br
+        .col-12.col-sm-6
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, dolorem tenetur totam ut, laborum quam consectetur culpa pariatur veniam blanditiis maiores accusantium repellat amet! Ipsam vitae placeat repellat natus beatae?
+        .col-12.col-sm-6
+          img(src='https://picsum.photos/1400/400?random=6', width='80%', alt='', srcset='')
+  // đánh giá
+  br
+  .container
+    h4.text-center &Dstrok;&aacute;nh gi&aacute;
+    br
+    .scrolling-wrapper
+      .card
+        h2 Card
+      .card
+        h2 Card
+      .card
+        h2 Card
+      .card
+        h2 Card
+      .card
+        h2 Card
+      .card
+        h2 Card
+      .card
+        h2 Card
+      .card
+        h2 Card
+      .card
+        h2 Card
+
+
+
+  script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
+
+

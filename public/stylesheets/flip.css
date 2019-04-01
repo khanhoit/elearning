@@ -1,0 +1,33 @@
+.contain-card-learn{
+  cursor: pointer;
+  position: relative;
+  width: 60%;
+  height: 400px;
+}
+
+.front, .back{
+  color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform: perspective(600px);
+  transition: all 1s ease-in-out;
+}
+.front{
+  transform: rotateY(0deg);
+}
+.back{
+  backface-visibility: hidden;
+  display: flex;
+  background:black;
+  justify-content:center;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+.contain-card-learn:hover .front{
+  transform: rotateY(-180deg);
+}
+.contain-card-learn:hover .back{
+  transform: rotateY(0deg);
+}
