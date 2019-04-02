@@ -3,7 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  console.log('res.locals.checkLogged: ',res.locals);
+  res.render('index', { checkLogged: res.locals.checkLogged });
 });
 
 module.exports = router;

@@ -15,8 +15,16 @@ head
         span.navbar-toggler-icon
       #navbarNavDropdown.collapse.navbar-collapse.ml-auto.justify-content-end
         ul.navbar-nav
-          li.nav-item
-            a.nav-link(href='/login') &Dstrok;&abreve;ng nh&#x1EAD;p
-          li.nav-item
-            a.nav-link(href='/signup') &Dstrok;&abreve;ng k&yacute;
+          if checkLogged
+            li.nav-item
+              a.nav-link(href='../users/courses') C&aacute;c kh&oacute;a h&#x1ECD;c
+            li.nav-item
+              a.nav-link(href='#') qu&#x1EA3;n l&yacute; t&agrave;i kho&#x1EA3;n
+            li.nav-item
+              a#dangxuat.nav-link(href='') &Dstrok;&abreve;ng xu&#x1EA5;t
+          else
+            li.nav-item
+              a.nav-link(href='/login') &Dstrok;&abreve;ng nh&#x1EAD;p
+            li.nav-item
+              a.nav-link(href='/signup') &Dstrok;&abreve;ng k&yacute;
 block content
