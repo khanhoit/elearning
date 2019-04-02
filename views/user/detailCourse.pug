@@ -2,6 +2,7 @@ extends header-user
 
 block content
   link(rel='stylesheet', href='/stylesheets/flip.css')
+  link(rel='stylesheet', href='/stylesheets/customScrollbar.css')
   br
   .container
     .row
@@ -18,7 +19,7 @@ block content
               source(src='http://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3', type='audio/ogg')
       .col-sm-4.col-12
         // các bài giảng
-        div(style='height:400px; padding: 10px;   overflow-y: auto;')
+        div#myScrollbar(style='height:400px; padding: 10px;   overflow-y: auto;')
           a(href='#')
             .row.m-2.p-2(style='border-bottom:2px solid gray')
               .col-4

@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/',checkLoginMiddleware.checkLoggedIndex, indexRouter);
 app.use('/users',checkLoginMiddleware.requireLogin, usersRouter);
 app.use('/users/courses',checkLoginMiddleware.requireLogin, coursesRouter);
-app.use('/users/courses/detail',checkLoginMiddleware.requireLogin, detailRouter);
+app.use('/users/detail',checkLoginMiddleware.requireLogin, detailRouter);
 app.use('/login',checkLoginMiddleware.checkLogged, loginRouter);
 app.use('/signup',checkLoginMiddleware.checkLogged, signupRouter);
 
