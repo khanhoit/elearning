@@ -1,8 +1,8 @@
 module.exports.requireLogin = function (req,res,next){
 
-  console.log(req.signedCookies);
   if(!req.signedCookies.mkt_u){
     res.redirect('../login');
+    return;
   }
   next();
 }
@@ -10,6 +10,7 @@ module.exports.requireLogin = function (req,res,next){
 module.exports.checkLogged=function(req,res,next){
   if(req.signedCookies.mkt_u){
     res.redirect('../users');
+    return;
   }
   next();
 }
