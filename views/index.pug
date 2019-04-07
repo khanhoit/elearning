@@ -11,33 +11,41 @@ block content
         li(data-target='#carouselExampleIndicators', data-slide-to='2')
       .carousel-inner
         .carousel-item.active(style='')
-          img.d-block.w-100(src='https://picsum.photos/1200/400?random=1', alt='First slide')
+          img.d-block.w-100(src='https://i.ibb.co/KqGGgK6/bn01.jpg', alt='First slide')
         .carousel-item
-          img.d-block.w-100(src='https://picsum.photos/1200/400?random=2', alt='Second slide')
+          img.d-block.w-100(src='https://i.ibb.co/7WBbF34/bn02.jpg', alt='Second slide')
         .carousel-item
-          img.d-block.w-100(src='https://picsum.photos/1200/400?random=3', alt='Third slide')
+          img.d-block.w-100(src='https://i.ibb.co/7t2T5vV/bn03.jpg', alt='Third slide')
       a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
         span.carousel-control-prev-icon(aria-hidden='true')
         span.sr-only Previous
       a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
         span.carousel-control-next-icon(aria-hidden='true')
         span.sr-only Next
+
   // giới thiệu phương pháp
   br
   .container
-    div
-      h4.text-center Gi&#x1EDB;i thi&#x1EC7;u ph&#x1B0;&#x1A1;ng ph&aacute;p h&#x1ECD;c flashcard
-      br
-      .row.text-center
-        .col-12.col-sm-6
-          img(src='https://picsum.photos/1400/400?random=5', width='80%', alt='', srcset='')
-        .col-12.col-sm-6
-          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nemo facere earum iste reprehenderit ratione itaque, error ullam nihil quaerat et, nulla modi consectetur architecto beatae! Repellendus atque earum omnis.
-        br
-        .col-12.col-sm-6
-          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, dolorem tenetur totam ut, laborum quam consectetur culpa pariatur veniam blanditiis maiores accusantium repellat amet! Ipsam vitae placeat repellat natus beatae?
-        .col-12.col-sm-6
-          img(src='https://picsum.photos/1400/400?random=6', width='80%', alt='', srcset='')
+    h3.text-center.mb-4.mt-4 T&#x1EA1;i sao b&#x1EA1;n n&ecirc;n ch&#x1ECD;n EZ?
+    br
+    .card.text-white.bg-info.mb-3.w-100(style="border:none")
+      .card-header
+        b D&#x1EC5; d&agrave;ng ghi nh&#x1EDB;
+      .card-body
+        p.card-text Ph&#x1B0;&#x1A1;ng ph&aacute;p Flashcard hi&#x1EC7;u qu&#x1EA3; trong vi&#x1EC7;c h&#x1ECD;c t&#x1EEB; v&#x1EF1;ng
+    .card.text-white.bg-danger.mb-3.w-100(style="border:none")
+      .card-header
+        b H&igrave;nh &#x1EA3;nh tr&#x1EF1;c quan
+      .card-body
+        p.card-text
+          | M&#x1ED7;i t&#x1EEB; v&#x1EF1;ng &dstrok;&#x1B0;&#x1EE3;c x&acirc;y d&#x1EF1;ng &dstrok;i k&egrave;m v&#x1EDB;i nh&#x1EEF;ng h&igrave;nh &#x1EA3;nh tr&#x1EF1;c quan, sinh &dstrok;&#x1ED9;ng v&agrave; th&uacute; v&#x1ECB;
+    .card.text-white.bg-warning.mb-3.w-100(style="border:none")
+      .card-header
+        b B&#x1ED9; t&#x1EEB; theo ch&#x1EE7; &dstrok;&#x1EC1;
+      .card-body
+        p.card-text T&#x1EEB; v&#x1EF1;ng &dstrok;&#x1B0;&#x1EE3;c chia th&agrave;nh c&aacute;c b&#x1ED9; theo ch&#x1EE7; &dstrok;&#x1EC1; ph&ugrave; h&#x1EE3;p v&#x1EDB;i &dstrok;&#x1ED9; tu&#x1ED5;i c&#x1EE7;a tr&#x1EBB;
+
+
   // đánh giá
   br
   .container
@@ -63,7 +71,10 @@ block content
       .card
         h2 Card
 
-
+  .text-center.container
+     h4
+      a.text-dark(href="../learnTry?idCourse=f64bded2-989d-4ff7-9404-fa6979ec3773" style="text-decoration:none")
+        button.btn.btn-primary.btn-lg Học thử
 
   script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
@@ -72,3 +83,6 @@ block content
   if checkLogged
     script(src='/javascripts/dangxuat.js')
 
+  include footer.pug
+
+//- extends footer

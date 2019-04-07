@@ -1,11 +1,10 @@
 extends header-user
 
 block content
-  // các khóa học của bạn
   // các khóa học
   br
   .container
-    h4.text-center.text-sm-left C&aacute;c kh&oacute;a h&#x1ECD;c c&#x1EE7;a b&#x1EA1;n
+    h4.text-center.text-sm-left C&aacute;c kh&oacute;a h&#x1ECD;c 
     br
     .row
       each course in data 
@@ -15,10 +14,11 @@ block content
             h5.mt-3= course.name_course
             p= course.describe
             hr
-            a.text-dark(href='../users/detail?idCourse='+course._id , style='text-decoration:none; ')
+            a.text-dark(href='../users/detail?idCourse='+course.id , style='text-decoration:none; ')
               button.btn.btn-primary.btn-lg.btn-block(type='button') tham gia
   
   script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
   script(src='/javascripts/dangxuat.js')
+  include ../footer.pug

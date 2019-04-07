@@ -6,14 +6,15 @@ module.exports.loginGet= function(req, res, next) {
 
 module.exports.loginPost= async function(req, res, next) {
   let data = await Users.findOne({'email': req.body.email, 'password':req.body.password});
-  
+  console.log(data);
   if(!data){
-    res.redirect('../login');
+    res.render('./user/login',{
+      error:"mật khẩu hoặc email không đúng"        
+    });
     return;
   }
   
-  if(!req.signedCookies.mkt_u)
-  res.cookie('mkt_u',req.body.email,{
+  res.cookie('mkt_u',data.id,{
     signed:true
   })
   res.redirect('../users');

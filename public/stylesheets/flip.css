@@ -19,8 +19,6 @@
 }
 .back{
   backface-visibility: hidden;
-  display: flex;
-  background:black;
   justify-content:center;
   align-items: center;
   transform: rotateY(180deg);
@@ -30,4 +28,7 @@
 }
 .contain-card-learn:hover .back{
   transform: rotateY(0deg);
+}
+.playSounditem:hover{
+   cursor: pointer; 
 }

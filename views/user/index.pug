@@ -6,57 +6,29 @@ block content
   .container
     h4.text-center.text-sm-left C&aacute;c kh&oacute;a h&#x1ECD;c c&#x1EE7;a b&#x1EA1;n
     br
-    .row
-      .col-sm-6.col-12.mb-4
-        .m-auto.border.p-2(style='width:70%;box-shadow:0px 1px 3px 1px #bebed8;')
-          a.text-dark(href='#', style='text-decoration:none; ')
-            img(src='https://picsum.photos/400/300?', width='100%', alt='')
-            h5 t&ecirc;n kh&oacute;a h&#x1ECD;c
-            p th&ocirc;ng tin v&#x1EC1; kh&oacute;a h&#x1ECD;c, d&agrave;nh cho ai? d&#x1EAD;y v&#x1EC1; n&#x1ED9;i dung g&igrave;?
-            hr
-            // thông tin của t
-            div
-              p L&#x1EA7;n v&agrave;o cu&#x1ED1;i c&ugrave;ng
-              p ho&agrave;n th&agrave;nh bao nhi&ecirc;u ph&#x1EA7;n tr&abreve;m
-      // khóa thứ2
-      .col-sm-6.col-12.mb-4
-        .m-auto.border.p-2(style='width:70%;box-shadow:0px 1px 3px 1px #bebed8;')
-          a.text-dark(href='#', style='text-decoration:none; ')
-            img(src='https://picsum.photos/400/300?', width='100%', alt='')
-            h5 t&ecirc;n kh&oacute;a h&#x1ECD;c
-            p th&ocirc;ng tin v&#x1EC1; kh&oacute;a h&#x1ECD;c, d&agrave;nh cho ai? d&#x1EAD;y v&#x1EC1; n&#x1ED9;i dung g&igrave;?
-            hr
-            // thông tin của t
-            div
-              p L&#x1EA7;n v&agrave;o cu&#x1ED1;i c&ugrave;ng
-              p ho&agrave;n th&agrave;nh bao nhi&ecirc;u ph&#x1EA7;n tr&abreve;m
-      // khóa thứ3
-      .col-sm-6.col-12.mb-4
-        .m-auto.border.p-2(style='width:70%;box-shadow:0px 1px 3px 1px #bebed8;')
-          a.text-dark(href='#', style='text-decoration:none; ')
-            img(src='https://picsum.photos/400/300?', width='100%', alt='')
-            h5 t&ecirc;n kh&oacute;a h&#x1ECD;c
-            p th&ocirc;ng tin v&#x1EC1; kh&oacute;a h&#x1ECD;c, d&agrave;nh cho ai? d&#x1EAD;y v&#x1EC1; n&#x1ED9;i dung g&igrave;?
-            hr
-            // thông tin của t
-            div
-              p L&#x1EA7;n v&agrave;o cu&#x1ED1;i c&ugrave;ng
-              p ho&agrave;n th&agrave;nh bao nhi&ecirc;u ph&#x1EA7;n tr&abreve;m
-      // khóa thứ4
-      .col-sm-6.col-12.mb-4
-        .m-auto.border.p-2(style='width:70%;box-shadow:0px 1px 3px 1px #bebed8;')
-          a.text-dark(href='#', style='text-decoration:none; ')
-            img(src='https://picsum.photos/400/300?', width='100%', alt='')
-            h5 t&ecirc;n kh&oacute;a h&#x1ECD;c
-            p th&ocirc;ng tin v&#x1EC1; kh&oacute;a h&#x1ECD;c, d&agrave;nh cho ai? d&#x1EAD;y v&#x1EC1; n&#x1ED9;i dung g&igrave;?
-            hr
-            // thông tin của t
-            div
-              p L&#x1EA7;n v&agrave;o cu&#x1ED1;i c&ugrave;ng
-              p ho&agrave;n th&agrave;nh bao nhi&ecirc;u ph&#x1EA7;n tr&abreve;m
+    if myCourses
+      .row
+        each myCourse in myCourses 
+          .col-sm-6.col-12.mb-4
+            .m-auto.border.p-2(style='width:70%;box-shadow:0px 1px 3px 1px #bebed8;')
+              a.text-dark(href='../users/detail?idCourse=' + myCourse.id, style='text-decoration:none; ')
+                img(src=myCourse.img_baner, width='100%', alt='')
+                h5= myCourse.name_course
+                p= myCourse.describe 
+                hr
+                // thông tin của t
+                div
+                  p L&#x1EA7;n v&agrave;o cu&#x1ED1;i c&ugrave;ng
+                  p ho&agrave;n th&agrave;nh bao nhi&ecirc;u ph&#x1EA7;n tr&abreve;m
+    else
+      div.text-center 
+        p Bạn chưa tham gia khóa học nào
+        a(href='../users/courses') Tham gia khóa học
 
 
   script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
   script(src='/javascripts/dangxuat.js')
+
+  include ../footer.pug

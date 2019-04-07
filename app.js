@@ -4,7 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/elearning', {useNewUrlParser: true});
+require('dotenv').config();
+
+mongoose.connect('mongodb+srv://user1:0000@cluster1-hopvw.mongodb.net/test?retryWrites=true', {useNewUrlParser: true});
 
   
 var indexRouter = require('./routes/index');
@@ -13,6 +15,7 @@ var loginRouter = require('./routes/login');
 var signupRouter = require('./routes/signup');
 var coursesRouter = require('./routes/courses');
 var detailRouter = require('./routes/detailCourse');
+var learnTryRouter = require('./routes/learnTry');
 
 var checkLoginMiddleware = require('./middleware/checkLogin.middleware');
 
@@ -29,6 +32,7 @@ app.use(cookieParser('sdkfsdjfsdkfj'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/',checkLoginMiddleware.checkLoggedIndex, indexRouter);
+app.use('/learnTry',checkLoginMiddleware.checkLoggedIndex,learnTryRouter);
 app.use('/users',checkLoginMiddleware.requireLogin, usersRouter);
 app.use('/users/courses',checkLoginMiddleware.requireLogin, coursesRouter);
 app.use('/users/detail',checkLoginMiddleware.requireLogin, detailRouter);

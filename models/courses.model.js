@@ -6,7 +6,6 @@ var courseSchema = new mongose.Schema({
   describe:String,
   img_baner:String
 })
-
 var course = mongose.model('course',courseSchema,'courses');
 
 module.exports = course;
