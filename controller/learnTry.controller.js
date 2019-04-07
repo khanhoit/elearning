@@ -2,8 +2,7 @@
 var detailCourses = require('../models/detailCourses.model');
 
 module.exports.getLearnTry= async function(req, res) {
-  
-  const {data} = await detailCourses.findOne({"id":req.query.idCourse})
-  console.log(data);
+  let {data} = await detailCourses.findOne({"id":req.query.idCourse});
+  data= data.slice(0,4);
   res.render('learnTry',{data});
 }
