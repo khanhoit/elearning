@@ -15,7 +15,7 @@ block content
         .carousel-item
           img.d-block.w-100(src='https://i.ibb.co/7WBbF34/bn02.jpg', alt='Second slide')
         .carousel-item
-          img.d-block.w-100(src='https://i.ibb.co/7t2T5vV/bn03.jpg', alt='Third slide')
+          img.d-block.w-100(src='https://i.ibb.co/yp8TWdp/xongxoa.jpg', alt='Third slide')
       a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
         span.carousel-control-prev-icon(aria-hidden='true')
         span.sr-only Previous
@@ -26,7 +26,7 @@ block content
   // giới thiệu phương pháp
   br
   .container
-    h3.text-center.mb-4.mt-4 T&#x1EA1;i sao b&#x1EA1;n n&ecirc;n ch&#x1ECD;n EZ?
+    h4.text-center.mb-4.mt-4 T&#x1EA1;i sao b&#x1EA1;n n&ecirc;n ch&#x1ECD;n EZ?
     br
     .card.text-white.bg-info.mb-3.w-100(style="border:none")
       .card-header
@@ -70,11 +70,11 @@ block content
         h2 Card
       .card
         h2 Card
-
-  .text-center.container
-     h4
-      a.text-dark(href="../learnTry?idCourse=f64bded2-989d-4ff7-9404-fa6979ec3773" style="text-decoration:none")
-        button.btn.btn-primary.btn-lg Học thử
+  if !checkLogged
+    .text-center.container
+      h4
+        a.text-dark(href="../learnTry?idCourse=f64bded2-989d-4ff7-9404-fa6979ec3773" style="text-decoration:none")
+          button.btn.btn-primary.btn-lg Học thử
 
   script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
