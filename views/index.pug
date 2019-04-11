@@ -1,87 +1,169 @@
 extends header-layout
 
 block content
+  .hero-content
+    .hero-content-overlay
+      .container
+        .row
+          .col-12
+            .hero-content-wrap.flex.flex-column.justify-content-center.align-items-start
+              header.entry-header
+                h4 Get started with online courses
+                h1
+                  | best online
+                  br
+                  | Learning system
+              .entry-content
+                p
+                  | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+              footer.entry-footer.read-more
+                a(href='../about') read more
+  // các khóa học tiêu biểu
+  section.featured-courses.horizontal-column.courses-wrap
+    .container
+      .row
+        .col-12
+          header.heading.flex.justify-content-between.align-items-center.flex-column.flex-lg-row
+            h3.entry-title.text-center Các khóa học nổi bật
+            a.btn.mt-4.mt-sm-0(href='../courses') view all
+        .col-12.col-lg-6
+          .course-content.flex.flex-wrap.justify-content-between.align-content-lg-stretch
+            figure.course-thumbnail
+              a(href='#')
+                img(src='https://i.ibb.co/TDytpCR/banner2.png', width="100%" alt='')
+            .course-content-wrap
+              header.entry-header
+                .course-ratings.flex.align-items-center
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star-o
+                  span.course-ratings-count (4 votes)
+                h2.entry-title
+                  a(href='#') The Complete Android Developer Course
+                .entry-meta.flex.flex-wrap.align-items-center
+                  .course-author
+                    a(href='#') Ms. Lara Croft 
+                  .course-date July 21, 2018
+              footer.entry-footer.flex.justify-content-between.align-items-center
+                .course-cost
+                  span.free-cost Free
+        .col-12.col-lg-6
+          .course-content.flex.flex-wrap.justify-content-between.align-content-lg-stretch
+            figure.course-thumbnail
+              a(href='#')
+                img(src='images/2.jpg', alt='')
+            .course-content-wrap
+              header.entry-header
+                .course-ratings.flex.align-items-center
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star
+                  span.course-ratings-count (4 votes)
+                h2.entry-title
+                  a(href='#') Learn Photoshop, Web Design &amp; Profitable
+                .entry-meta.flex.flex-wrap.align-items-center
+                  .course-author
+                    a(href='#') Mr. John Wick
+                  .course-date Aug 21, 2018
+              footer.entry-footer.flex.justify-content-between.align-items-center
+                .course-cost
+                  | $32 
+                  span.price-drop $59
 
-  // slider baner
-  .container
-    #carouselExampleIndicators.carousel.slide(data-ride='carousel')
-      ol.carousel-indicators
-        li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
-        li(data-target='#carouselExampleIndicators', data-slide-to='1')
-        li(data-target='#carouselExampleIndicators', data-slide-to='2')
-      .carousel-inner
-        .carousel-item.active(style='')
-          img.d-block.w-100(src='https://i.ibb.co/KqGGgK6/bn01.jpg', alt='First slide')
-        .carousel-item
-          img.d-block.w-100(src='https://i.ibb.co/7WBbF34/bn02.jpg', alt='Second slide')
-        .carousel-item
-          img.d-block.w-100(src='https://i.ibb.co/yp8TWdp/xongxoa.jpg', alt='Third slide')
-      a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
-        span.carousel-control-prev-icon(aria-hidden='true')
-        span.sr-only Previous
-      a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
-        span.carousel-control-next-icon(aria-hidden='true')
-        span.sr-only Next
-
-  // giới thiệu phương pháp
-  br
-  .container
-    h4.text-center.mb-4.mt-4 T&#x1EA1;i sao b&#x1EA1;n n&ecirc;n ch&#x1ECD;n EZ?
-    br
-    .card.text-white.bg-info.mb-3.w-100(style="border:none")
-      .card-header
-        b D&#x1EC5; d&agrave;ng ghi nh&#x1EDB;
-      .card-body
-        p.card-text Ph&#x1B0;&#x1A1;ng ph&aacute;p Flashcard hi&#x1EC7;u qu&#x1EA3; trong vi&#x1EC7;c h&#x1ECD;c t&#x1EEB; v&#x1EF1;ng
-    .card.text-white.bg-danger.mb-3.w-100(style="border:none")
-      .card-header
-        b H&igrave;nh &#x1EA3;nh tr&#x1EF1;c quan
-      .card-body
-        p.card-text
-          | M&#x1ED7;i t&#x1EEB; v&#x1EF1;ng &dstrok;&#x1B0;&#x1EE3;c x&acirc;y d&#x1EF1;ng &dstrok;i k&egrave;m v&#x1EDB;i nh&#x1EEF;ng h&igrave;nh &#x1EA3;nh tr&#x1EF1;c quan, sinh &dstrok;&#x1ED9;ng v&agrave; th&uacute; v&#x1ECB;
-    .card.text-white.bg-warning.mb-3.w-100(style="border:none")
-      .card-header
-        b B&#x1ED9; t&#x1EEB; theo ch&#x1EE7; &dstrok;&#x1EC1;
-      .card-body
-        p.card-text T&#x1EEB; v&#x1EF1;ng &dstrok;&#x1B0;&#x1EE3;c chia th&agrave;nh c&aacute;c b&#x1ED9; theo ch&#x1EE7; &dstrok;&#x1EC1; ph&ugrave; h&#x1EE3;p v&#x1EDB;i &dstrok;&#x1ED9; tu&#x1ED5;i c&#x1EE7;a tr&#x1EBB;
-
+  // giới thiệu về ez
+  section.about-section
+    .container
+      .row
+        .col-12.col-lg-6.align-content-lg-stretch
+          header.heading
+            h2.entry-title Thông tin về Ez
+            p
+              | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
+          .entry-content.ezuca-stats
+            .stats-wrap.flex.flex-wrap.justify-content-lg-between
+              .stats-count
+                | 50
+                span M+
+                p STUDENTS LEARNING
+              .stats-count
+                | 30
+                span K+
+                p ACTIVE COURSES
+              .stats-count
+                | 340
+                span M+
+                p INSTRUCTORS ONLINE
+              .stats-count
+                | 20
+                span +
+                p Country Reached
+        .col-12.col-lg-6.flex.align-content-center.mt-5.mt-lg-0
+          .ezuca-video.position-relative
+            img(src='images/video-screenshot.png', alt='')
 
   // đánh giá
   br
+  br
   .container
-    h4.text-center &Dstrok;&aacute;nh gi&aacute;
-    br
-    .scrolling-wrapper
-      .card
-        h2 Card
-      .card
-        h2 Card
-      .card
-        h2 Card
-      .card
-        h2 Card
-      .card
-        h2 Card
-      .card
-        h2 Card
-      .card
-        h2 Card
-      .card
-        h2 Card
-      .card
-        h2 Card
-  if !checkLogged
-    .text-center.container
-      h4
-        a.text-dark(href="../learnTry?idCourse=f64bded2-989d-4ff7-9404-fa6979ec3773" style="text-decoration:none")
-          button.btn.btn-primary.btn-lg Học thử
+      h2.entry-title(style="margin: 0;font-size: 42px;font-weight: 400;") Phản hồi của người dùng
+  section.testimonial-section
+    // Swiper
+    .swiper-container.testimonial-slider
+      .swiper-wrapper
+        .swiper-slide
+          .container
+            .row
+              .col-12.col-lg-6.order-2.order-lg-1.flex.align-items-center.mt-5.mt-lg-0
+                figure.user-avatar
+                  img(src='images/user-1.jpg', alt='')
+              .col-12.col-lg-6.order-1.order-lg-2.content-wrap.h-100
+                .entry-content
+                  p
+                    | Together as teachers, students and universities we can help make this education available for everyone.
+                .entry-footer
+                  h3.testimonial-user
+                    | Russell Stephens - 
+                    span University in UK
+        .swiper-slide
+          .container
+            .row
+              .col-12.col-lg-6.order-2.order-lg-1.flex.align-items-center.mt-5.mt-lg-0
+                figure.user-avatar
+                  img(src='images/user-2.jpg', alt='')
+              .col-12.col-lg-6.order-1.order-lg-2.content-wrap.h-100
+                .entry-content
+                  p
+                    | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                // .entry-content
+                .entry-footer
+                  h3.testimonial-user
+                    | Robert Stephens - 
+                    span University in Oxford
+        .swiper-slide
+          .container
+            .row
+              .col-12.col-lg-6.flex.order-2.order-lg-1.align-items-center.mt-5.mt-lg-0
+                figure.user-avatar
+                  img(src='images/user-3.jpg', alt='')
+              .col-12.col-lg-6.order-1.order-lg-2.content-wrap.h-100
+                .entry-content
+                  p
+                    | Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.
+                .entry-footer
+                  h3.testimonial-user
+                    | James Stephens - 
+                    span University in Cambridge
+      .container
+        .row
+          .col-12.col-lg-6.mt-5.mt-lg-0
+            .swiper-pagination.position-relative.flex.justify-content-center.align-items-center
 
-  script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
-  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
- 
-  if checkLogged
-    script(src='/javascripts/dangxuat.js')
+
+
 
   include footer.pug
 

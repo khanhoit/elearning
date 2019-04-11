@@ -16,6 +16,8 @@ var signupRouter = require('./routes/signup');
 var coursesRouter = require('./routes/courses');
 var detailRouter = require('./routes/detailCourse');
 var learnTryRouter = require('./routes/learnTry');
+var aboutRouter = require('./routes/about');
+var allCourseRouter = require('./routes/allCourses');
 
 var checkLoginMiddleware = require('./middleware/checkLogin.middleware');
 
@@ -32,6 +34,8 @@ app.use(cookieParser('sdkfsdjfsdkfj'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/',checkLoginMiddleware.checkLoggedIndex, indexRouter);
+app.use('/about',checkLoginMiddleware.checkLoggedIndex, aboutRouter);
+app.use('/courses',checkLoginMiddleware.checkLoggedIndex, allCourseRouter);
 app.use('/learnTry',checkLoginMiddleware.checkLoggedIndex,learnTryRouter);
 app.use('/users',checkLoginMiddleware.requireLogin, usersRouter);
 app.use('/users/courses',checkLoginMiddleware.requireLogin, coursesRouter);

@@ -1,9 +1,18 @@
 extends ../header-layout
 block content
   // dang nhap
+  .hero-content
+    .page-header-overlay
+      .container
+        .row  
+          .col-12
+            header.entry-header.text-center.text-white
+              h1 LOGIN
+  br
+  br
   .container.d-flex.vh-100.align-items-center
     #login.w-50.m-auto.w-50.m-auto
-      h2.text-center &Dstrok;&abreve;ng nh&#x1EAD;p
+      //- h2.text-center &Dstrok;&abreve;ng nh&#x1EAD;p
       if error
         .alert.alert-danger= error 
       form(action='', method='POST')
@@ -23,16 +32,16 @@ block content
           div
             a(href='#') Qu&ecirc;n m&#x1EAD;t kh&#x1EA9;u?
         .form-group.row
-          button.btn.btn-primary.btn-lg.btn-block &Dstrok;&abreve;ng Nh&#x1EAD;p  
+          button.btn.btn-primary.btn-lg.btn-block.border-0(style="background-color: #19c880") &Dstrok;&abreve;ng Nh&#x1EAD;p  
         hr
         .d-flex.justify-content-between
           p &Dstrok;&abreve;ng nh&#x1EAD;p b&#x1EB1;ng
           a(href='./signup') &Dstrok;&abreve;ng k&yacute;
         .form-group.d-flex
           .mr-1
-            button.btn.btn-primary facebook
+            button.btn.btn-primary.border-0(style="background-color: #19c880") facebook
           .mr-1
-            button.btn.btn-primary google
+            button.btn.btn-primary.border-0(style="background-color: #19c880") google
   
   
   script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')

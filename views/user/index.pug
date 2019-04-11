@@ -1,11 +1,29 @@
-extends header-user
+extends ../header-layout
 
 block content
   // các khóa học của bạn
+  .hero-content
+    .page-header-overlay
+      .container
+        .row  
+          .col-12
+            header.entry-header.text-center.text-white
+              h1 trang các nhân
   br
   .container
-    p.text-center
-      b.text-center.text-sm-left C&aacute;c kh&oacute;a h&#x1ECD;c c&#x1EE7;a b&#x1EA1;n
+    .row
+      .col-12
+        .breadcrumbs
+          ul.flex.flex-wrap.align-items-center.p-0.m-0
+            li
+              a(href='../')
+                i.fa.fa-home
+                |  Home
+            li trangcanhan
+    .row
+      .col-12
+        h2 Chào mừng bạn đến với Ez
+    br
     br
     if myCourses
       .row
