@@ -1,10 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
+var controller = require('../controller/index.controller');
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  console.log('res.locals.checkLogged: ',res.locals.checkLogged);
-  res.render('index', { checkLogged: res.locals.checkLogged });
-});
+router.get('/',  controller.indexGet);
 
 module.exports = router;

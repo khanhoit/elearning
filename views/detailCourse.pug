@@ -1,0 +1,91 @@
+extends header-layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/flip.css')
+  link(rel='stylesheet', href='/stylesheets/customScrollbar.css')
+  .hero-content
+    .page-header-overlay
+      .container
+        .row  
+          .col-12
+            header.entry-header.text-center.text-white
+              h1= course[0].name_course
+  .container
+    .row
+      .col-12
+        .breadcrumbs
+          ul.flex.flex-wrap.align-items-center.p-0.m-0
+            li
+              a(href='../')
+                i.fa.fa-home
+                |  Home
+            li Chi tiết khóa học
+  
+  //- phần chi tiết khóa học
+  .container
+    .row
+      .col-sm-8.col-12
+        .d-flex
+          .contain-card-learn
+            .front
+              img#img_for_item(src=data[0].url_img, width='100%', alt='')
+            #text_for_item.back= data[0].text
+          .playSounditem.text-center.m-5.p-3(style='height:fit-content;')
+            <i class="fas fa-play" style="font-size:5rem;color:#2196F3"></i>
+            audio#myPlay(controls='', hidden='')
+              source#sound_for_item(src=data[0].url_sound , type='audio/ogg')
+      .col-sm-4.col-12
+        // các bài giảng
+        div#myScrollbar(style='height:400px; padding: 10px; overflow-y: auto;')
+          each item in data
+            .itemLearn
+              .row.m-2.p-2(style='border-bottom:2px solid gray')
+                .col-4
+                  img.imgLearn(src=item.url_img, width='100%', alt='')
+                .col-8.textLearn= item.text
+                  audio(controls='', hidden='')
+                    source.soundLearn(src=item.url_sound , type='audio/ogg')
+
+  //- các khóa học khác
+  br
+  br
+  .container
+    .flex.flex-wrap.justify-content-lg-end.justify-content-center
+      a.btn.mt-4.mt-sm-0(href='../test') Làm bài test
+  section.featured-courses.horizontal-column.courses-wrap
+    .container
+      hr
+      br
+      .row
+        .col-12
+            header.heading.flex.justify-content-between.align-items-center.flex-column.flex-lg-row
+              h3 Các khóa học khác
+        each course in difCourse
+          .col-12.col-lg-6
+            .course-content.flex.flex-wrap.justify-content-between.align-content-lg-stretch
+              figure.course-thumbnail
+                a(href='#')
+                  img(src=`${course.img_baner}`, width="100%" alt='')
+              .course-content-wrap
+                header.entry-header
+                  .course-ratings.flex.align-items-center
+                    span.fa.fa-star.checked
+                    span.fa.fa-star.checked
+                    span.fa.fa-star.checked
+                    span.fa.fa-star.checked
+                    span.fa.fa-star-o
+                    span.course-ratings-count (4 votes)
+                  h2.entry-title
+                    a(href=`../detail?idCourse=${course.id}`)= course.name_course
+                  .entry-meta.flex.flex-wrap.align-items-center
+                    .course-author
+                      //- a(href='#') Ms. Lara Croft 
+                    .course-date July 21, 2018
+                footer.entry-footer.flex.justify-content-between.align-items-center
+                  .course-cost
+                    span.free-cost Free
+
+
+  script(src='/javascripts/playSound.js')
+  script(src='/javascripts/changeItemLearn.js')           
+  include ./footer.pug

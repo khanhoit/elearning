@@ -25,55 +25,34 @@ block content
         .col-12
           header.heading.flex.justify-content-between.align-items-center.flex-column.flex-lg-row
             h3.entry-title.text-center Các khóa học nổi bật
-            a.btn.mt-4.mt-sm-0(href='../courses') view all
-        .col-12.col-lg-6
-          .course-content.flex.flex-wrap.justify-content-between.align-content-lg-stretch
-            figure.course-thumbnail
-              a(href='#')
-                img(src='https://i.ibb.co/TDytpCR/banner2.png', width="100%" alt='')
-            .course-content-wrap
-              header.entry-header
-                .course-ratings.flex.align-items-center
-                  span.fa.fa-star.checked
-                  span.fa.fa-star.checked
-                  span.fa.fa-star.checked
-                  span.fa.fa-star.checked
-                  span.fa.fa-star-o
-                  span.course-ratings-count (4 votes)
-                h2.entry-title
-                  a(href='#') The Complete Android Developer Course
-                .entry-meta.flex.flex-wrap.align-items-center
-                  .course-author
-                    a(href='#') Ms. Lara Croft 
-                  .course-date July 21, 2018
-              footer.entry-footer.flex.justify-content-between.align-items-center
-                .course-cost
-                  span.free-cost Free
-        .col-12.col-lg-6
-          .course-content.flex.flex-wrap.justify-content-between.align-content-lg-stretch
-            figure.course-thumbnail
-              a(href='#')
-                img(src='images/2.jpg', alt='')
-            .course-content-wrap
-              header.entry-header
-                .course-ratings.flex.align-items-center
-                  span.fa.fa-star.checked
-                  span.fa.fa-star.checked
-                  span.fa.fa-star.checked
-                  span.fa.fa-star.checked
-                  span.fa.fa-star
-                  span.course-ratings-count (4 votes)
-                h2.entry-title
-                  a(href='#') Learn Photoshop, Web Design &amp; Profitable
-                .entry-meta.flex.flex-wrap.align-items-center
-                  .course-author
-                    a(href='#') Mr. John Wick
-                  .course-date Aug 21, 2018
-              footer.entry-footer.flex.justify-content-between.align-items-center
-                .course-cost
-                  | $32 
-                  span.price-drop $59
+            a.btn.mt-4.mt-sm-0(href='../courses') Xem tất cả
 
+        each course in dataCourse
+          .col-12.col-lg-6
+            .course-content.flex.flex-wrap.justify-content-between.align-content-lg-stretch
+              figure.course-thumbnail
+                a(href='#')
+                  img(src=`${course.img_baner}`, width="100%" alt='')
+              .course-content-wrap
+                header.entry-header
+                  .course-ratings.flex.align-items-center
+                    span.fa.fa-star.checked
+                    span.fa.fa-star.checked
+                    span.fa.fa-star.checked
+                    span.fa.fa-star.checked
+                    span.fa.fa-star-o
+                    span.course-ratings-count (4 votes)
+                  h2.entry-title
+                    a(href=`../detail?idCourse=${course.id}`)= course.name_course
+                  .entry-meta.flex.flex-wrap.align-items-center
+                    .course-author
+                      //- a(href='#') Ms. Lara Croft 
+                    .course-date July 21, 2018
+                footer.entry-footer.flex.justify-content-between.align-items-center
+                  .course-cost
+                    span.free-cost Free
+ 
+ 
   // giới thiệu về ez
   section.about-section
     .container
