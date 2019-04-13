@@ -13,11 +13,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var signupRouter = require('./routes/signup');
-var coursesRouter = require('./routes/courses');
 var detailRouter = require('./routes/detailCourse');
-var learnTryRouter = require('./routes/learnTry');
 var aboutRouter = require('./routes/about');
 var allCourseRouter = require('./routes/allCourses');
+var testRouter = require('./routes/test');
 
 var checkLoginMiddleware = require('./middleware/checkLogin.middleware');
 
@@ -37,6 +36,7 @@ app.use('/',checkLoginMiddleware.checkLoggedIndex, indexRouter);
 app.use('/about',checkLoginMiddleware.checkLoggedIndex, aboutRouter);
 app.use('/courses',checkLoginMiddleware.checkLoggedIndex, allCourseRouter);
 app.use('/detail',checkLoginMiddleware.checkLoggedIndex, detailRouter);
+app.use('/test',checkLoginMiddleware.checkLoggedIndex, testRouter);
 app.use('/users',checkLoginMiddleware.requireLogin, usersRouter);
 app.use('/login',checkLoginMiddleware.checkLogged, loginRouter);
 app.use('/signup',checkLoginMiddleware.checkLogged, signupRouter);

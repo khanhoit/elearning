@@ -1,0 +1,9 @@
+.phanhoi p{
+  font-size: 26px;
+}
+
+@media screen and (max-width: 662px) {
+  .phanhoi p{
+    font-size: 26px;
+  }
+}

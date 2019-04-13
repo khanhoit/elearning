@@ -1,0 +1,74 @@
+extends header-layout
+
+block content
+  .hero-content
+    .page-header-overlay
+      .container
+        .row  
+          .col-12
+            header.entry-header.text-center.text-white
+              h1 ABOUT
+  //- test
+  br
+  br
+  .container
+    h3 Làm bài Test
+    
+  .container
+    div(style='display: flex; justify-content: space-between; width: 60%; margin: auto;')
+      #a.itemTest(style='padding: 10px;')
+        img(src='https://via.placeholder.com/450', width='100%')
+      #b.itemTest(style='padding: 10px;')
+        img(src='https://via.placeholder.com/450', width='100%')
+      #c.itemTest(style='padding: 10px;')
+        img(src='https://via.placeholder.com/450', width='100%')
+      #d.itemTest(style='padding: 10px;')
+        img(src='https://via.placeholder.com/450', width='100%')
+    div(style='display: flex; justify-content: space-between; width: 60%; margin: auto;')
+      div
+        | 8/10
+      div 
+        span 
+          i.fas.fa-volume-up
+      div
+        button
+          i.fas.fa-chevron-left
+        button
+          i.fas.fa-chevron-right
+
+  br
+  section.featured-courses.horizontal-column.courses-wrap
+    .container
+      hr
+      br
+      .row
+        .col-12
+            header.heading.flex.justify-content-between.align-items-center.flex-column.flex-lg-row
+              h3 Các khóa học khác
+        each course in difCourse
+          .col-12.col-lg-6
+            .course-content.flex.flex-wrap.justify-content-between.align-content-lg-stretch
+              figure.course-thumbnail
+                a(href='#')
+                  img(src=`${course.img_baner}`, width="100%" alt='')
+              .course-content-wrap
+                header.entry-header
+                  .course-ratings.flex.align-items-center
+                    span.fa.fa-star.checked
+                    span.fa.fa-star.checked
+                    span.fa.fa-star.checked
+                    span.fa.fa-star.checked
+                    span.fa.fa-star-o
+                    span.course-ratings-count (4 votes)
+                  h2.entry-title
+                    a(href=`../detail?idCourse=${course.id}`)= course.name_course
+                  .entry-meta.flex.flex-wrap.align-items-center
+                    .course-author
+                      //- a(href='#') Ms. Lara Croft 
+                    .course-date July 21, 2018
+                footer.entry-footer.flex.justify-content-between.align-items-center
+                  .course-cost
+                    span.free-cost Free
+
+  //- 
+  include ./footer.pug

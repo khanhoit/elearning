@@ -10,17 +10,9 @@ block content
           .col-12
             header.entry-header.text-center.text-white
               h1= course[0].name_course
-  .container
-    .row
-      .col-12
-        .breadcrumbs
-          ul.flex.flex-wrap.align-items-center.p-0.m-0
-            li
-              a(href='../')
-                i.fa.fa-home
-                |  Home
-            li Chi tiết khóa học
-  
+
+  br
+  br
   //- phần chi tiết khóa học
   .container
     .row
@@ -51,7 +43,7 @@ block content
   br
   .container
     .flex.flex-wrap.justify-content-lg-end.justify-content-center
-      a.btn.mt-4.mt-sm-0(href='../test') Làm bài test
+      a.btn.mt-4.mt-sm-0(href=`../test?idCourse=${course[0].id}`) Làm bài test
   section.featured-courses.horizontal-column.courses-wrap
     .container
       hr

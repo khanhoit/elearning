@@ -6,10 +6,11 @@ head
   title home
   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
   //- link(rel='stylesheet', href='/stylesheets/index.css')
-  link(rel='stylesheet', href='/stylesheets/style.css')
   link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous")
   link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css')
   link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css')
+  link(rel='stylesheet', href='/stylesheets/style.css')
+  link(rel='stylesheet', href='/stylesheets/my.css')
 
 // header
 .hero-content
@@ -36,9 +37,9 @@ head
               if !checkLogged
                  ul.flex.justify-content-center.align-items-center.py-2.pt-md-0
                   li
-                    a(href='/signup') Register
+                    a(href='/signup') Đăng ký
                   li
-                    a(href='/login') Login
+                    a(href='/login') Đăng nhập
     //- menu
     .nav-bar
       .container
@@ -52,14 +53,14 @@ head
             nav.site-navigation.flex.justify-content-end.align-items-center
               ul.flex.flex-column.flex-lg-row.justify-content-lg-end.align-content-center
                 li
-                  a(href='../') Home
+                  a(href='../') Trang chủ
                 li
-                  a(href='../courses') Courses
+                  a(href='../courses') Các khóa học
                 li
-                  a(href='../about') About Us
+                  a(href='../about') Về chúng tôi
                 if checkLogged
                   li.myUserk
-                    a(href="../users") nameUser 
+                    a(href="../users") Trang cá nhân 
                   li 
                     a#dangxuat(href="../") Đăng xuất
               .hamburger-menu.d-lg-none

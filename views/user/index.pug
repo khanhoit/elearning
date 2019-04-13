@@ -30,7 +30,7 @@ block content
         each myCourse in myCourses 
           .col-sm-6.col-12.mb-4
             .m-auto.border.p-2(style='width:70%;box-shadow:0px 1px 3px 1px #bebed8;')
-              a.text-dark(href='../users/detail?idCourse=' + myCourse.id, style='text-decoration:none; ')
+              a.text-dark(href='../detail?idCourse=' + myCourse.id, style='text-decoration:none; ')
                 img(src=myCourse.img_baner, width='100%', alt='')
                 h5= myCourse.name_course
                 p= myCourse.describe 
