@@ -1,2 +1,42 @@
 block userProfile
-  div profile user
+  link(rel='stylesheet', href='/stylesheets/userProfile.css')
+  br 
+  br
+  .container
+    form(action='../users', method='POST')
+      .d-flex.justify-content-center
+        div.border.p-4(style="width:60%")
+          .row
+            .col-12.col-md-4
+              div.text-center
+                img.border.rounded-circle(src="https://instagram.fdar5-1.fna.fbcdn.net/vp/0b9693fab2beafd902d9717ce88eb7b6/5D2CF3F1/t51.2885-19/44884218_345707102882519_2446069589734326272_n.jpg?_nc_ht=instagram.fdar5-1.fna.fbcdn.net", width="70%" alt="img")
+            .col-12.col-md-8
+              ul.list-unstyled
+                li.itemProfile
+                  h4 Họ và tên
+                  div.d-flex.justify-content-between.align-items-center
+                    input.pl-2.pr-2(type="text", value=`${user.name}`, name='name', readonly, style="border:none; outline: none;flex-grow:1", maxlength='34',  required='required')
+                    i.fas.fa-edit.ml-3(title="Chỉnh sửa")
+                  hr
+                li.itemProfile
+                  h5 Email
+                  div.d-flex.justify-content-between.align-items-center
+                    input.pl-2.pr-2(type="text", value=`${user.email}`, name='email', readonly, style="border:none; outline: none;flex-grow:1", maxlength='34', pattern='^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', required='required')
+                    i.fas.fa-edit.ml-3(title="Chỉnh sửa")
+                  hr
+                li.itemProfile
+                  h5 Số điện thoại
+                  div.d-flex.justify-content-between.align-items-center
+                    input.pl-2.pr-2(type="text", value=`${user.phone}`, name='phone', readonly, style="border:none; outline: none;flex-grow:1", maxlength='15', pattern='[0-9]{9,16}',  required='required')
+                    i.fas.fa-edit.ml-3(title="Chỉnh sửa")
+                  hr
+                li.itemProfile
+                  h5 Password
+                  div.d-flex.justify-content-between.align-items-center
+                    input.pl-2.pr-2(type="password" value=`${user.password}` name='password' readonly style="border:none; outline: none;flex-grow:1" maxlength='8' required='required')
+                    i.fas.fa-edit.ml-3(title="Chỉnh sửa")
+                  hr
+          div.text-right
+            input#btnSaveChange.btn.btn-primary.border-0(hidden value="Lưu thay đổi" type="submit" style="background-color: #19c880")    
+  br
+  script(src='/javascripts/userProfile.js')

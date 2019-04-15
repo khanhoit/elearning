@@ -1,59 +1,90 @@
+var curentIndex= 0;
 const itemTest = document.getElementsByClassName('itemTest');
-	const answer = document.getElementsByClassName('answer');
-	const itemTrue = document.getElementsByClassName('itemTrue')[0];
-	const itemNext = document.getElementsByClassName('itemNext')[0];
-	var numberClick=0;
+const answer = document.getElementsByClassName('answer');
+const itemNext = document.getElementsByClassName('itemNext')[0];
+const itemFixedTest = document.getElementsByClassName('itemFixedTest');
+const playFixedTest = document.getElementById('playFixedTest');
+const playTest = document.getElementsByClassName('playTest');
+const result = document.getElementById('result');
+const oit = document.getElementsByClassName('oit');
+const fixedOit = document.getElementById('fixedOit');
+const idTime = document.getElementById('idTime');
 
-	itemNext.addEventListener('click',nextQuestion);
-	// next question
-	function nextQuestion(){
-			console.log('next');
-	}
-
-	function kk(e,i){
-		if (numberClick!=0) {
-			return;
+var numberClick=0;
+var myTime = 20;
+var a;
+// giới hạn thời gian 15s
+function checkTimeTest(){
+	a = setInterval(function(){
+		if(myTime==0){
+			clearInterval(a);
+			nextQuestion();
+			console.log('end');
 		}
-		if(e.target.id=="a"){
-			answer[i].classList.add('answerTrue')
+		idTime.textContent = --myTime + "";
+	},1000);
+}
+checkTimeTest();
+
+itemNext.addEventListener('click',nextQuestion);
+// next question
+function nextQuestion(){
+	myTime=20;
+	idTime.textContent = myTime;
+	checkTimeTest();
+	idTime.textContent = myTime + "";
+	const answerTrue = '<div class="answer itemFixedTrue"><b><i class="fas fa-check"></i></b></div>';
+	const answerFalse = '<div class="answer itemFixedFalse"><b><i class="fas fa-times"></i></b></div>'
+	const imgkk =' <img id="a" src="" width="100%">'
+	numberClick=0;
+	for (let a = 0; a < answer.length; a++) {
+			answer[a].classList.remove('show');
+		}
+	if (curentIndex>9) {
+		clearInterval(a);
+		return;
+	}
+	for (let i = 0; i < itemFixedTest.length; i++) {
+		if (i==(+oit[curentIndex].textContent)) {
+			itemFixedTest[i].innerHTML =imgkk + answerTrue;
 		}else{
-			answer[i].classList.add('answerFalse')
+			itemFixedTest[i].innerHTML =imgkk + answerFalse;
 		}
-		numberClick=1;
-		itemTrue.classList.add('answerTrue');		
-		setTimeout(nextQuestion,2000);
+		itemFixedTest[i].children[0].src= itemTest[curentIndex*4+i].children[0].src;
 	}
-	for (let i = 0 ; i < itemTest.length; i++) {
-		const inde = i;
-		itemTest[i].addEventListener("click",()=>{
-			kk(event,i)
-		},false)
+	fixedOit.textContent = oit[curentIndex].textContent;
+	playFixedTest.children[1].src = playTest[curentIndex].src;
+	curentIndex++;
+}
+
+function kk(e,i){
+	if (numberClick!==0) {
+		return;
 	}
 
-	// playsound
-	function fncPlaySoundTest(){
-		const playSound = document.querySelector('#playTest audio');
-		playSound.load();
-		playSound.play();
+	if (i==(+fixedOit.textContent)) {
+		let kq = +result.textContent
+		result.textContent= ++kq;
+	}else{
+		console.log('false');
 	}
-	(document.getElementById('playTest')).addEventListener("click",fncPlaySoundTest);
+	answer[i].classList.add('myShow')
+	document.getElementsByClassName('itemFixedTrue')[0].classList.add('myShow');		
+	numberClick=1;
+	setTimeout(nextQuestion,3000);
+}
 
-	function createData(numberMax, preNumber){
-		let dataRow=[];
-		while(true){
-			dataRow = Array.from({length:4},()=>Math.floor(Math.random()*numberMax))
-			const set1 = new Set(dataRow);
-			if (set1.size==dataRow.length) {
-				break;
-			}
-		}
-		return dataRow;
-	}
+for (let i = 0 ; i < itemFixedTest.length; i++) {
+	itemFixedTest[i].addEventListener("click",()=>{
+		kk(event,i)
+	},false)
+}
 
-	(function createTest(){
-		
-		const data = Array.from({length:10});
-		const dataRow = data.map(()=>createData(12,12));
-		console.log(dataRow);
-		console.log(data);
-	})()
+// playsound
+function fncPlaySoundTest(){
+	const playSound= this.children[1];
+	playSound.load();
+	playSound.play();
+	console.log(playSound);
+}
+playFixedTest.addEventListener('click',fncPlaySoundTest);

@@ -1,0 +1,21 @@
+  .itemProfile>input:hover{
+  cursor: pointer !important;
+}
+.itemProfile div :hover .itemProfile div i{
+  opacity: 1;
+}
+.itemProfile>div {
+  opacity: 0.6;
+}
+.itemProfile>div>i:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.itemProfile div i{
+  transition: all 0.2s ease;
+  transform: scale(1);
+  opacity: 0.5;
+}
+.myOnChange{
+  background: #c2c2c2;
+}

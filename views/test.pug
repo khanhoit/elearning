@@ -1,19 +1,80 @@
 extends header-layout
 
 block content
-  link(rel='stylesheet', href='/stylesheets/test.css')
+  //- resutl
   .container
+    // Button trigger modal
+    button.btn.btn-primary(type='button', data-toggle='modal', data-target='#exampleModalCenter')
+      | Launch demo modal
+    // Modal
+    #exampleModalCenter.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+      .modal-dialog.modal-dialog-centered(role='document')
+        .modal-content
+          .modal-header
+            h5#exampleModalLongTitle.modal-title Modal title
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') &times;
+          .modal-body
+            | abc
+          .modal-footer
+            button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+            button.btn.btn-primary(type='button') Save changes
+
+  .container
+    div.text-right.m-2
+      div.text-right.border.rounded-circle.d-inline-block.ml-auto(style="position:relative;width:45px; height:45px; border-color:#19c880 !important; color:#f3a90b !important")
+        span#idTime(style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);") 15
+    #contain-FixedTest(style='display: flex; justify-content: space-between; margin: auto;')
+      .itemFixedTest(style='margin: 10px;')
+        img#a(src=`${data[dataSetTest[0][0]].url_img}`, width='100%')
+        .answer.itemFixedTrue
+          b
+            i.fas.fa-check
+      .itemFixedTest(style='margin: 10px;')
+        img#b(src=`${data[dataSetTest[0][1]].url_img}`, width='100%')
+        .answer.itemFixedFalse
+          b
+            i.fas.fa-times
+      .itemFixedTest(style='margin: 10px; ')
+        img#c(src=`${data[dataSetTest[0][2]].url_img}`, width='100%')
+        .answer.itemFixedFalse
+          b
+            i.fas.fa-times
+      .itemFixedTest(style='margin: 10px; ')
+        img#d(src=`${data[dataSetTest[0][3]].url_img}`, width='100%')
+        .answer.itemFixedFalse
+          b
+            i.fas.fa-times
+    br
+    div(style='display: flex; justify-content: center; width: 60%; margin: auto;')
+      div(hidden)
+        | S&#x1ED1; c&acirc;u &dstrok;&uacute;ng: 
+        span#result 0
+      #playFixedTest
+        span
+          i.fas.fa-volume-up(style="font-size:3rem;color:#19c880")
+        audio(hidden='', src=`${data[dataSetTest[0][0]].url_sound}`, controls='', type='audio/ogg')
+      div(hidden)
+        button.itemNext
+          i.fas.fa-chevron-right
+    #fixedOit(hidden) 0
+    div(style='margin: 100px 0px;')
+
+
+  //- các bài test
+  link(rel='stylesheet', href='/stylesheets/test.css')
+  .container(hidden)
     each item,index in dataSetTest
       -var itemTrue=Math.floor(Math.random()*4);
-      div(style='display: flex; justify-content: space-between; margin: auto;')
+      .container-kk(style='display: flex; justify-content: space-between; margin: auto;')
         .itemTest(style='margin: 10px;')
           img#a(src=`${data[item[0]].url_img}`, width='100%')
-          .answer.itemTrue
+          .answer.itemFalse
             b
               i.fas.fa-check
         .itemTest(style='margin: 10px;')
           img#b(src=`${data[item[1]].url_img}`, width='100%')
-          .answer.itemFalse
+          .answer.itemTrue
             b
               i.fas.fa-times
         .itemTest(style='margin: 10px; ')
@@ -26,54 +87,45 @@ block content
           .answer.itemFalse
             b
               i.fas.fa-times
+      .oit= itemTrue
       br
       div(style='display: flex; justify-content: space-between; width: 60%; margin: auto;')
-        div
-          | S&#x1ED1; c&acirc;u &dstrok;&uacute;ng: 
-          span 8/10
-        
-        #playTest
-          span
-            i.fas.fa-volume-up
-          audio(hidden='', src=`${data[item[itemTrue]].url_sound}`, controls='', type='audio/ogg')
-        div
-          button.itemNext
-            i.fas.fa-chevron-right
+        audio.playTest(hidden='', src=`${data[item[itemTrue]].url_sound}`, controls='', type='audio/ogg')
 
+    
+
+  //- các khóa học khác
   br
-  section.featured-courses.horizontal-column.courses-wrap
-    .container
-      hr
-      br
-      .row
-        .col-12
-            header.heading.flex.justify-content-between.align-items-center.flex-column.flex-lg-row
-              h3 Các khóa học khác
-        each course in difCourse
-          .col-12.col-lg-6
-            .course-content.flex.flex-wrap.justify-content-between.align-content-lg-stretch
-              figure.course-thumbnail
-                a(href='#')
-                  img(src=`${course.img_baner}`, width="100%" alt='')
-              .course-content-wrap
-                header.entry-header
-                  .course-ratings.flex.align-items-center
-                    span.fa.fa-star.checked
-                    span.fa.fa-star.checked
-                    span.fa.fa-star.checked
-                    span.fa.fa-star.checked
-                    span.fa.fa-star-o
-                    span.course-ratings-count (4 votes)
-                  h2.entry-title
-                    a(href=`../detail?idCourse=${course.id}`)= course.name_course
-                  .entry-meta.flex.flex-wrap.align-items-center
-                    .course-author
-                      //- a(href='#') Ms. Lara Croft 
-                    .course-date July 21, 2018
-                footer.entry-footer.flex.justify-content-between.align-items-center
-                  .course-cost
-                    span.free-cost Free
-
+  .container
+    .row.mx-m-25
+      .col-12
+        h3 Các khóa học khác
+      each course in difCourse
+        .col-12.col-md-4.px-25
+          .course-content(data-aos="fade-up")
+            figure.course-thumbnail
+              img(src=`${course.img_baner}`, alt='')
+            .course-content-wrap
+              header.entry-header
+                h2.entry-title= course.name_course
+                .entry-meta.flex.flex-wrap.align-items-center
+                  .course-author  
+                  .course-create-date= course.describe
+              footer.entry-footer.flex.flex-wrap.justify-content-between.align-items-center
+                .course-ratings.flex.justify-content-end.align-items-center
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star-o
+                  span.course-ratings-count (4 votes)
+                .course-cost
+                  if !checkLogged
+                    a(href=`../learnTry?idCourse=${course.id}`)
+                      button.btn.btn-primary.border-0(type="button" style="background-color: #19c880") Học thử
+                  else
+                    a(href=`../detail?idCourse=${course.id}`)
+                      button.btn.btn-primary.border-0(type="button" style="background-color: #19c880") Tham gia khóa học
   script(src='/javascripts/test.js')
   //- 
   include ./footer.pug

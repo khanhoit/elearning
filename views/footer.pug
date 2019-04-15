@@ -1,47 +1,48 @@
 block foot
 // footer
 br
-footer.pt-5.pb-5(style="background:#3f3f3f;")
-  .container
+footer(style="background:#cdcdcd;")
+  .container.pt-5.pb-5
     .row
       .col-12.col-lg-3
         a(href="../")
           img(src='https://i.ibb.co/ZdCCqzq/Logo-EZ.png', alt='Logo-EZ', width='80%')
       .col-12.col-lg-3
-        h4 English easy
+        h4 English Easy
         ul.list-unstyled
           li
-            a.text-reset(href='') C&aacute;c kh&oacute;a h&#x1ECD;c
+            a.text-reset(href='../about') Giới thiệu về EZ
           li
-            a.text-reset(href='') V&#x1EC1; ch&uacute;ng t&ocirc;i
+            a.text-reset(href='') EZ tư vấn
+          li
+            a.text-reset(href='../courses') Các khóa học
       .col-12.col-lg-3
-        h4 Li&ecirc;n l&#x1EA1;c
+        h4 Hỗ trợ
         ul.list-unstyled
           li
-            a.text-reset(href='#') 
-              span 
-                i.fa.fa-phone  
-              |  19001000
+            a(href="") Hotline : 19001000
           li
-            a.text-reset(href='#') 
-              span 
-                i.fa.fa-envelope  
-              |  ez123@gmail.com
+            a(href="") Các câu hỏi thường gặp
+          li
+            a(href="") Gửi các yêu cầu hỗ trợ
       .col-12.col-lg-3
-        h4 Theo d&otilde;i ch&uacute;ng t&ocirc;i
-        ul.list-unstyled(style='display: flex;')
-          li.m-2
+        h4 Theo dõi chúng tôi
+        ul.list-unstyled
+          li
             a(href='https://www.facebook.com/English-easy-411633356050402/?modal=admin_todo_tour' target="_black")
-              span(style='font-size: 2em; color:dark;')
-                i.fab.fa-facebook-square
-          li.m-2
-            a(href='https://www.instagram.com/' target="_black")
-              span(style='font-size: 2em; color:dark;')
-                i.fab.fa-instagram
-          li.m-2
+              span(style='font-size: 1em; color:dark;')
+                i.fab.fa-facebook-square.mr-3
+                | Facebook
+          li
             a(href='https://www.youtube.com/channel/UCaqueoC7xoyynPY83JxY0Hg' target="_black")
-              span(style='font-size: 2em; color:dark;')
-                i.fab.fa-youtube
+              span(style='font-size: 1em; color:dark;')
+                i.fab.fa-youtube.mr-3
+                | Youtube
+          li
+            a(href='https://www.instagram.com/' target="_black")
+              span(style='font-size: 1em; color:dark;')
+                i.fab.fa-instagram.mr-3
+                | Instagram
 
   script(src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js')
   script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')

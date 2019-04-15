@@ -17,6 +17,7 @@ var detailRouter = require('./routes/detailCourse');
 var aboutRouter = require('./routes/about');
 var allCourseRouter = require('./routes/allCourses');
 var testRouter = require('./routes/test');
+var learnTryRouter = require('./routes/learnTry');
 
 var checkLoginMiddleware = require('./middleware/checkLogin.middleware');
 
@@ -34,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/',checkLoginMiddleware.checkLoggedIndex, indexRouter);
 app.use('/about',checkLoginMiddleware.checkLoggedIndex, aboutRouter);
+app.use('/learntry',checkLoginMiddleware.checkLoggedIndex, learnTryRouter);
 app.use('/courses',checkLoginMiddleware.checkLoggedIndex, allCourseRouter);
 app.use('/detail',checkLoginMiddleware.checkLoggedIndex, detailRouter);
 app.use('/test',checkLoginMiddleware.checkLoggedIndex, testRouter);

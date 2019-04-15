@@ -20,7 +20,7 @@ module.exports.testGet=async function(req, res) {
   const dataSetTest = dataSetTestRow.map(()=>createDataTest(data.length,12));
   console.log('test',dataSetTest);
 
-  difCourse= difCourse.slice(0,4);
+  difCourse= difCourse.slice(0,3);
   console.log(data);
   res.render('test',{difCourse,data,dataSetTest});
 }

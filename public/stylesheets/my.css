@@ -17,3 +17,22 @@
   background-color: #19c880 !important;
   color: white !important;
 }
+
+/* for play sound */
+.fa-volume-up{
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out;
+}
+.fa-volume-up:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.itemLearn{
+  transition: all 0.1s;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+.itemLearn:hover{
+  cursor: pointer;
+  opacity: 0.6;
+}

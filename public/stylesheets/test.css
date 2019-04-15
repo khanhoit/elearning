@@ -1,9 +1,10 @@
-.itemTest{
+.itemTest,.itemFixedTest{
   position: relative;
   vertical-align: center;
 }
-.itemTest img{
+.itemTest img,.itemFixedTest img{
   display: block;
+  vertical-align:bottom;
 }
 .answer{
   justify-content: center;
@@ -21,27 +22,24 @@
 .answer>p{
   font-size: 24px;
 }
-.itemTest:hover{
+.itemFixedTest:hover{
   cursor: pointer;
 }
-.answerTrue{
+.myShow{
   z-index: 999;
 }
-.answerFalse{
-  z-index: 999;
-}
-.itemTrue{
+.itemFixedTrue{
   color: #19c880;
 }
-.itemFalse{
+.itemFixedFalse{
   color: red;
 }
 
-#playTest{
+.playTest{
   transform: scale(1);
   transition: transform 0.5s;
 }
-#playTest:hover{
+.playTest:hover{
   cursor: pointer;
   transform: scale(1.3);
 }

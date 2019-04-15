@@ -1,24 +1,8 @@
 extends header-layout
 
 block content
-  .hero-content
-    .page-header-overlay
-      .container
-        .row  
-          .col-12
-            header.entry-header.text-center.text-white
-              h1 ABOUT
+  //- các ưu điểm
   .container
-    .row
-      .col-12
-        .breadcrumbs
-          ul.flex.flex-wrap.align-items-center.p-0.m-0
-            li
-              a(href='../')
-                i.fa.fa-home
-                |  Home
-            li About
-    //- các ưu điểm
     .row
       .col-12
         .about-heading
@@ -57,35 +41,31 @@ block content
               span
                 i.fas.fa-check.mr-3(style="color:#19c880;") 
               | Giao diện đẹp thu hút sự chú ý của trẻ nhỏ
-  
-  //- đội ngũ phát triển
-  .container
-    .row
-      .col-12
-        .about-heading
-          h2.entry-title Đội ngũ phát triển
-      .col-12.col-md-6.col-lg-3
-        .team-member
-          img(src='images/team-1.jpg', alt='')
-          h3 Nguyễn văn A 
-          h4 thạc sỹ, giáo sư
-      .col-12.col-md-6.col-lg-3
-        .team-member
-          img(src='images/team-1.jpg', alt='')
-          h3 Nguyễn văn A 
-          h4 thạc sỹ, giáo sư
-      .col-12.col-md-6.col-lg-3
-        .team-member
-          img(src='images/team-1.jpg', alt='')
-          h3 Nguyễn văn A 
-          h4 thạc sỹ, giáo sư
-      .col-12.col-md-6.col-lg-3
-        .team-member
-          img(src='images/team-1.jpg', alt='')
-          h3 Nguyễn văn A 
-          h4 thạc sỹ, giáo sư
-  
-  //- đối tác
+    .container
+      .row
+        .col-12
+          .about-heading
+            h2.entry-title Đội ngũ phát triển
+        .col-12.col-md-6.col-lg-3
+          .team-member
+            img(src='images/team-1.jpg', alt='')
+            h3 Nguyễn văn A 
+            h4 thạc sỹ, giáo sư
+        .col-12.col-md-6.col-lg-3
+          .team-member
+            img(src='images/team-1.jpg', alt='')
+            h3 Nguyễn văn A 
+            h4 thạc sỹ, giáo sư
+        .col-12.col-md-6.col-lg-3
+          .team-member
+            img(src='images/team-1.jpg', alt='')
+            h3 Nguyễn văn A 
+            h4 thạc sỹ, giáo sư
+        .col-12.col-md-6.col-lg-3
+          .team-member
+            img(src='images/team-1.jpg', alt='')
+            h3 Nguyễn văn A 
+            h4 thạc sỹ, giáo sư
   br
   br 
   h2.text-center Các nhà tài trợ
@@ -104,6 +84,6 @@ block content
             img(src='images/logo-4.png', alt='')
           .logo-wrap
             img(src='images/logo-5.png', alt='')
-  br
-  br
+    br
+    br
   include ./footer.pug
