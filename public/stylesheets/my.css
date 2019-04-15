@@ -7,3 +7,13 @@
     font-size: 26px;
   }
 }
+
+.carousel-indicators .active{
+  background-color: #19c880 !important;
+}
+
+/* tabs index user */
+.containInforUser .active{
+  background-color: #19c880 !important;
+  color: white !important;
+}

@@ -1,36 +1,47 @@
 block foot
 // footer
 br
-.bg-light.pt-5.pb-5
+footer.pt-5.pb-5(style="background:#3f3f3f;")
   .container
     .row
-      .col-12.col-sm-4
-        p
-          b H&#x1ED7; tr&#x1EE3;
-        p Hotline: 19001000
-        p T&#x1ED5;ng &dstrok;&agrave;i t&#x1B0; v&#x1EA5;n: 19001000
-        p c&acirc;u h&#x1ECF;i th&#x1B0;&#x1EDD;ng g&#x1EB7;p
-      .col-12.col-sm-4
-        p
-          b Theo d&otilde;i
-        p
-          span.mr-2
-            i.fas.fa-envelope-square.fa-2x
-          |  Email
-        p
-          span.mr-2
-            i.fab.fa-facebook-square.fa-2x
-          |  Facebook
-        p
-          span.mr-2
-            i.fab.fa-twitter-square.fa-2x
-          |  Twitter
-      .col-12.col-sm-4
-        p
-          b &Dstrok;&#x1ECB;a ch&#x1EC9;
-        p &Dstrok;&#x1ECB;a ch&#x1EC9;: 123 Tr&#x1EA7;n Ph&uacute;, H&agrave; &Dstrok;&ocirc;ng, H&agrave; N&#x1ED9;i
-        p Gmail: ez123@gmail.com
-        p sdt: 0984.123.467
+      .col-12.col-lg-3
+        a(href="../")
+          img(src='https://i.ibb.co/ZdCCqzq/Logo-EZ.png', alt='Logo-EZ', width='80%')
+      .col-12.col-lg-3
+        h4 English easy
+        ul.list-unstyled
+          li
+            a.text-reset(href='') C&aacute;c kh&oacute;a h&#x1ECD;c
+          li
+            a.text-reset(href='') V&#x1EC1; ch&uacute;ng t&ocirc;i
+      .col-12.col-lg-3
+        h4 Li&ecirc;n l&#x1EA1;c
+        ul.list-unstyled
+          li
+            a.text-reset(href='#') 
+              span 
+                i.fa.fa-phone  
+              |  19001000
+          li
+            a.text-reset(href='#') 
+              span 
+                i.fa.fa-envelope  
+              |  ez123@gmail.com
+      .col-12.col-lg-3
+        h4 Theo d&otilde;i ch&uacute;ng t&ocirc;i
+        ul.list-unstyled(style='display: flex;')
+          li.m-2
+            a(href='https://www.facebook.com/English-easy-411633356050402/?modal=admin_todo_tour' target="_black")
+              span(style='font-size: 2em; color:dark;')
+                i.fab.fa-facebook-square
+          li.m-2
+            a(href='https://www.instagram.com/' target="_black")
+              span(style='font-size: 2em; color:dark;')
+                i.fab.fa-instagram
+          li.m-2
+            a(href='https://www.youtube.com/channel/UCaqueoC7xoyynPY83JxY0Hg' target="_black")
+              span(style='font-size: 2em; color:dark;')
+                i.fab.fa-youtube
 
   script(src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js')
   script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
@@ -38,7 +49,11 @@ br
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js')
+  script(src='https://unpkg.com/aos@2.3.1/dist/aos.js')
   script(src='/javascripts/custom.js')
+  
+  script
+   | AOS.init();
 
   if checkLogged
     script(src='/javascripts/dangxuat.js')

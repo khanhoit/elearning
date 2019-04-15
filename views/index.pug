@@ -1,24 +1,26 @@
 extends header-layout
 
 block content
-  .hero-content
-    .hero-content-overlay
-      .container
-        .row
-          .col-12
-            .hero-content-wrap.flex.flex-column.justify-content-center.align-items-start
-              header.entry-header
-                h4 Bắt đầu khóa học với chúng tôi
-                h1
-                  |  HỆ THỐNG HỌC TIẾNG ANH ONLINE CHẤT LƯỢNG NHẤT
-                  br
-                  //- | HỆ THỐNG HỌC TIẾNG ANH ONLINE CHẤT LƯỢNG NHẤT 
-              .entry-content
-                p
-                  //- | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
-              footer.entry-footer.read-more
-                a(href='../about') Xem thêm
-
+  // slider
+  .container  
+    #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators
+        li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+        li(data-target='#carouselExampleIndicators', data-slide-to='1')
+        li(data-target='#carouselExampleIndicators', data-slide-to='2')
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src='https://via.placeholder.com/1200x450?random=1', alt='First slide')
+        .carousel-item
+          img.d-block.w-100(src='https://via.placeholder.com/1200x450?random=2', alt='Second slide')
+        .carousel-item
+          img.d-block.w-100(src='https://via.placeholder.com/1200x450?random=3', alt='Third slide')
+      a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.sr-only Previous
+      a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.sr-only Next
                 
   // giới thiệu về ez
   section.about-section
@@ -29,101 +31,79 @@ block content
             h2.entry-title Thông tin về Ez
             p
               //- | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
-          .entry-content.ezuca-stats
+          .entry-content.ezuca-stats(data-aos="fade-right")
             .stats-wrap.flex.flex-wrap.justify-content-lg-between
               .stats-count
-                | 50
-                span M+
-                p STUDENTS LEARNING
+                | 1 triệu
+                span 
+                p Hơn học viên Tham gia
               .stats-count
                 | 30
-                span K+
-                p ACTIVE COURSES
+                span 
+                p Hơn 30 khóa học
               .stats-count
-                | 340
-                span M+
-                p INSTRUCTORS ONLINE
+                | 30
+                span 
+                p Sử dụng Ez hằng tháng
               .stats-count
-                | 20
-                span +
-                p Country Reached
-        .col-12.col-lg-6.flex.align-content-center.mt-5.mt-lg-0
+                | 3
+                span
+                p Có mặt tỉnh thành trong cả nước
+        .col-12.col-lg-6.flex.align-content-center.mt-5.mt-lg-0(data-aos="fade-left")
           .ezuca-video.position-relative
             img(src='images/video-screenshot.png', alt='')
 
-  // các khóa học tiêu biểu
+  // các khóa học nổi bật
   section.featured-courses.horizontal-column.courses-wrap
     .container
       .row
         .col-12
           header.heading.flex.justify-content-between.align-items-center.flex-column.flex-lg-row
             h3.entry-title.text-center Các khóa học nổi bật
-            a.btn.mt-4.mt-sm-0(href='../courses') Xem tất cả
-
+            a.btn.mt-4.mt-sm-0(href='../courses') 
+              | Xem tất cả
+              i.fas.fa-arrow-right
         each course in dataCourse
-          .col-12.col-lg-6
-            .course-content.flex.flex-wrap.justify-content-between.align-content-lg-stretch
-              figure.course-thumbnail
-                a(href='#')
-                  img(src=`${course.img_baner}`, width="100%" alt='')
-              .course-content-wrap
-                header.entry-header
-                  .course-ratings.flex.align-items-center
-                    span.fa.fa-star.checked
-                    span.fa.fa-star.checked
-                    span.fa.fa-star.checked
-                    span.fa.fa-star.checked
-                    span.fa.fa-star-o
-                    span.course-ratings-count (4 votes)
-                  h2.entry-title
-                    a(href=`../detail?idCourse=${course.id}`)= course.name_course
-                  .entry-meta.flex.flex-wrap.align-items-center
-                    .course-author
-                      //- a(href='#') Ms. Lara Croft 
-                    .course-date July 21, 2018
-                footer.entry-footer.flex.justify-content-between.align-items-center
-                  .course-cost
-                    span.free-cost Free
- 
- 
-
+          .col-12.col-lg-4.d-flex
+            .card(style='width: 100%;', data-aos="zoom-in")
+              img.card-img-top(src=`${course.img_baner}`, width="100%", alt='Card image cap')
+              .card-body.d-flex.flex-column.justify-content-between
+                h5.card-title= course.name_course
+                p.card-text= course.describe
+                p.d-flex.align-items-center(style="color:#f3a90b;")
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star.checked
+                  span.fa.fa-star-o
+                  span.course-ratings-count(style="color:rgba(1,1,1,0.4)") (4 votes)
+                p
+                  b price
+                if !checkLogged
+                  a.btn.text-white.btn-primary.border-0(style="background:#34d986;" href=`../detail?idCourse=${course.id}`) Học thử
+                else
+                  a.btn.text-white.btn-primary.border-0(style="background:#34d986;" href=`../detail?idCourse=${course.id}`) Tham gia khóa học
+  // các khóa học liên quan video
+  section.featured-courses.horizontal-column.courses-wrap
+    .container
+      .row
+        .col-12
+            header.heading.flex.justify-content-between.align-items-center.flex-column.flex-lg-row
+              h3.entry-title.text-center Các khóa học liên quan khác
+        .col-12.col-lg-6
+          div 
+            iframe(width='100%', height='320', src='https://www.youtube-nocookie.com/embed/iBkJi6OwG3A', frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='true')
+        .col-12.col-lg-6
+          div 
+            iframe(width='100%', height='320', src='https://www.youtube.com/embed/O9ium6cfkKY', frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='true')
+        
   // đánh giá
   br
   br
   .container
-    h2.entry-title(style="margin: 0;font-size: 42px;font-weight: 400;") Phản hồi của người dùng
+    h2.entry-title(style="margin: 0;font-size: 42px;font-weight: 400;") Địa chỉ của chúng tôi
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.2819637057883!2d105.78529261445385!3d20.98133159477277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accdcf7b0bd1%3A0xc1cf5dd00247628a!2zSOG7jWMgVmnhu4duIEPDtG5nIG5naOG7hyBCxrB1IENow61uaCBWaeG7hW4gVGjDtG5n!5e0!3m2!1svi!2s!4v1555235158015!5m2!1svi!2s" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-  //- .container.mt-5.mb-5
-  //-   #carouselExampleIndicators.carousel.slide(data-ride='carousel')
-  //-     ol.carousel-indicators
-  //-       li.active.bg-dark(data-target='#carouselExampleIndicators', data-slide-to='0')
-  //-       li.bg-dark(data-target='#carouselExampleIndicators', data-slide-to='1')
-  //-       li.bg-dark(data-target='#carouselExampleIndicators', data-slide-to='2')
-  //-     .carousel-inner
-  //-       .carousel-item.active
-  //-         div.phanhoi.d-flex.align-items-center.m-auto(style="width:40%")
-  //-           div.m-3
-  //-             img(src='images/user-1.jpg', alt='First slide')
-  //-           div
-  //-             p EZ là một website tuyệt vời cho các bé học tiếng anh
-  //-       .carousel-item
-  //-         div.phanhoi.d-flex.align-items-center.m-auto(style="width:40%")
-  //-           div.m-3
-  //-             img(src='images/user-2.jpg', alt='...')
-  //-           div
-  //-             p Bé học tiếng anh trên EZ thực sự rất hiệu quả nhờ hình ảnh sinh động, trục quan, nội dung rất hay và phù hợp với các bé.
-  //-       .carousel-item
-  //-         div.phanhoi.d-flex.align-items-center.m-auto(style="width:40%")
-  //-           div.m-3
-  //-             img(src='images/user-3.jpg', alt='...')
-  //-           div
-  //-             p Rất vui vì biết đến EZ. Một trang học trực tuyến hiệu quả với chi phí phù hợp.
-  //-     //- a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
-  //-     //-   span.carousel-control-prev-icon(aria-hidden='true')
-  //-     //-   span.sr-only Previous
-  //-     //- a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
-  //-     //-   span.carousel-control-next-icon(aria-hidden='true')
-  //-     //-   span.sr-only Next
 
   include footer.pug
 

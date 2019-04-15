@@ -46,7 +46,7 @@ a:hover, a:active {
 # Site Header
 --------------------------------------------------------------*/
 .site-header {
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     left: 0;
     z-index: 9999;
@@ -175,8 +175,7 @@ a:hover, a:active {
 # Nav Bar
 --------------------------------*/
 .nav-bar {
-    padding: 20px 0;
-    background: rgba(255,255,255,.1);
+    background: rgb(26,26,26);
 }
 
 /*
@@ -287,10 +286,10 @@ a:hover, a:active {
 
 .site-navigation ul li a {
     display: block;
-    padding: 12px 30px;
+    padding: 12px 20px;
     color: #fff;
     text-decoration: none;
-    text-transform: uppercase;
+    font-size: 16px;
 }
 
 @media screen and (min-width: 992px) {
@@ -331,8 +330,8 @@ a:hover, a:active {
 # Hero Section
 --------------------------------------------------------------*/
 .hero-content {
-    background: url("../images/hero-bg.jpg") no-repeat center;
-    background-size: cover;
+    /* background: url("../images/hero-bg.jpg") no-repeat center; */
+    /* background-size: cover; */
 }
 
 .hero-content-overlay {
@@ -486,7 +485,6 @@ a:hover, a:active {
 --------------------------------*/
 .courses-wrap .heading .entry-title {
     margin: 0;
-    font-size: 42px;
     font-weight: 400;
 }
 
@@ -639,7 +637,7 @@ a:hover, a:active {
 }
 
 a.btn {
-    padding: 16px 48px;
+    padding: 16px 28px;
     border: 2px solid #34d986;
     border-radius: 0;
     font-size: 13px;
@@ -661,8 +659,7 @@ a.btn:hover {
 --------------------------------*/
 .featured-courses.horizontal-column,
 .featured-courses.vertical-column {
-    padding: 100px 0;
-    background: #fff;
+    padding: 25px 0;
 }
 
 .featured-courses.horizontal-column .course-thumbnail {
@@ -715,8 +712,7 @@ a.btn:hover {
 # About Section
 --------------------------------*/
 .about-section {
-    padding: 100px 0;
-    background: #f7f7f7;
+    padding: 50px 0;
 }
 
 .about-section .heading {
@@ -907,7 +903,6 @@ a.btn:hover {
 
 .latest-news-events .heading .entry-title {
     margin: 0 0 50px;
-    font-size: 42px;
     font-weight: 400;
 }
 
@@ -948,7 +943,6 @@ a.btn:hover {
 .latest-news-events .featured-event-content .entry-title {
     width: 100%;
     margin-top: 32px;
-    font-size: 30px;
     font-weight: 400;
     color: #383749;
 }

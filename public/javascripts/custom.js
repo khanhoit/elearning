@@ -1,4 +1,5 @@
-
+console.log('init succes');
+AOS.init();
 (function($) {
     'use strict';
 

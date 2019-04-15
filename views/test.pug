@@ -1,40 +1,44 @@
 extends header-layout
 
 block content
-  .hero-content
-    .page-header-overlay
-      .container
-        .row  
-          .col-12
-            header.entry-header.text-center.text-white
-              h1 ABOUT
-  //- test
-  br
-  br
+  link(rel='stylesheet', href='/stylesheets/test.css')
   .container
-    h3 Làm bài Test
-    
-  .container
-    div(style='display: flex; justify-content: space-between; width: 60%; margin: auto;')
-      #a.itemTest(style='padding: 10px;')
-        img(src='https://via.placeholder.com/450', width='100%')
-      #b.itemTest(style='padding: 10px;')
-        img(src='https://via.placeholder.com/450', width='100%')
-      #c.itemTest(style='padding: 10px;')
-        img(src='https://via.placeholder.com/450', width='100%')
-      #d.itemTest(style='padding: 10px;')
-        img(src='https://via.placeholder.com/450', width='100%')
-    div(style='display: flex; justify-content: space-between; width: 60%; margin: auto;')
-      div
-        | 8/10
-      div 
-        span 
-          i.fas.fa-volume-up
-      div
-        button
-          i.fas.fa-chevron-left
-        button
-          i.fas.fa-chevron-right
+    each item,index in dataSetTest
+      -var itemTrue=Math.floor(Math.random()*4);
+      div(style='display: flex; justify-content: space-between; margin: auto;')
+        .itemTest(style='margin: 10px;')
+          img#a(src=`${data[item[0]].url_img}`, width='100%')
+          .answer.itemTrue
+            b
+              i.fas.fa-check
+        .itemTest(style='margin: 10px;')
+          img#b(src=`${data[item[1]].url_img}`, width='100%')
+          .answer.itemFalse
+            b
+              i.fas.fa-times
+        .itemTest(style='margin: 10px; ')
+          img#c(src=`${data[item[2]].url_img}`, width='100%')
+          .answer.itemFalse
+            b
+              i.fas.fa-times
+        .itemTest(style='margin: 10px; ')
+          img#d(src=`${data[item[3]].url_img}`, width='100%')
+          .answer.itemFalse
+            b
+              i.fas.fa-times
+      br
+      div(style='display: flex; justify-content: space-between; width: 60%; margin: auto;')
+        div
+          | S&#x1ED1; c&acirc;u &dstrok;&uacute;ng: 
+          span 8/10
+        
+        #playTest
+          span
+            i.fas.fa-volume-up
+          audio(hidden='', src=`${data[item[itemTrue]].url_sound}`, controls='', type='audio/ogg')
+        div
+          button.itemNext
+            i.fas.fa-chevron-right
 
   br
   section.featured-courses.horizontal-column.courses-wrap
@@ -70,5 +74,6 @@ block content
                   .course-cost
                     span.free-cost Free
 
+  script(src='/javascripts/test.js')
   //- 
   include ./footer.pug

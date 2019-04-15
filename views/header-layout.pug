@@ -4,69 +4,72 @@ head
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   meta(http-equiv='X-UA-Compatible', content='ie=edge')
   title home
+  link(rel="stylesheet", href="https://unpkg.com/aos@2.3.1/dist/aos.css")
   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
-  //- link(rel='stylesheet', href='/stylesheets/index.css')
   link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous")
   link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css')
   link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css')
   link(rel='stylesheet', href='/stylesheets/style.css')
   link(rel='stylesheet', href='/stylesheets/my.css')
-
 // header
-.hero-content
-  header.site-header
-    //- top 
-    .top-header-bar
-      .container-fluid
-        .row
-          .col-12.col-lg-4.d-none.d-md-flex.flex-wrap.justify-content-center.justify-content-lg-start.mb-3.mb-lg-0
-            .header-bar-email.d-flex.align-items-center
-              i.fa.fa-envelope
-              a(href='#') ez123@gmail.com
-            .header-bar-text.lg-flex.align-items-center
-              p
-                i.fa.fa-phone
-                | 19001000
-          .col-12.col-lg-8.d-flex.flex-wrap.justify-content-center.justify-content-lg-end.align-items-center.border
-            .header-bar-search
-              form.flex.align-items-stretch
-                input(type='search', placeholder='Tìm khóa học?')
-                button.flex.justify-content-center.align-items-center(type='submit', value='')
-                  i.fa.fa-search
-            .header-bar-menu
-              if !checkLogged
-                 ul.flex.justify-content-center.align-items-center.py-2.pt-md-0
+body(style="")
+  #fb-root
+    script(src="javascripts/mesFacebook.js")
+    .fb-customerchat(attribution='setup_tool', page_id='411633356050402', theme_color='#67b868', logged_in_greeting='Xin chào! Ez có thể giúp gì cho bạn?', logged_out_greeting='Xin chào! Ez có thể giúp gì cho bạn?')
+  .hero-content
+    header.site-header
+      //- top 
+      .top-header-bar
+        .container-fluid
+          .row
+            .col-12.col-lg-4.d-none.d-md-flex.flex-wrap.justify-content-center.justify-content-lg-start.mb-3.mb-lg-0
+              .header-bar-email.d-flex.align-items-center
+                i.fa.fa-envelope
+                a(href='#') ez123@gmail.com
+              .header-bar-text.lg-flex.align-items-center
+                p
+                  i.fa.fa-phone
+                  | 19001000
+            .col-12.col-lg-8.d-flex.flex-wrap.justify-content-center.justify-content-lg-end.align-items-center.border
+              .header-bar-search
+                form.flex.align-items-stretch
+                  input(type='search', placeholder='Tìm khóa học?')
+                  button.flex.justify-content-center.align-items-center(type='submit', value='')
+                    i.fa.fa-search
+              .header-bar-menu
+                if !checkLogged
+                  ul.flex.justify-content-center.align-items-center.py-2.pt-md-0
+                    li
+                      a(href='/signup') Đăng ký
+                    li
+                      a(href='/login') Đăng nhập
+      //- menu
+      .nav-bar
+        .container
+          .row
+            .col-9.col-lg-3
+              .site-branding
+                h1.site-title
+                  a.navbar-brand(href='../', style='width: 100px;')
+                    img(src='https://i.ibb.co/ZdCCqzq/Logo-EZ.png', width='100%', alt='Logo-EZ')
+            .col-3.col-lg-9.flex.justify-content-end.align-content-center
+              nav.site-navigation.flex.justify-content-end.align-items-center
+                ul.flex.flex-column.flex-lg-row.justify-content-lg-end.align-content-center
                   li
-                    a(href='/signup') Đăng ký
+                    a(href='../') Trang chủ
                   li
-                    a(href='/login') Đăng nhập
-    //- menu
-    .nav-bar
-      .container
-        .row
-          .col-9.col-lg-3
-            .site-branding
-              h1.site-title
-                a.navbar-brand(href='../', style='width: 100px;')
-                  img(src='https://i.ibb.co/ZdCCqzq/Logo-EZ.png', width='100%', alt='Logo-EZ')
-          .col-3.col-lg-9.flex.justify-content-end.align-content-center
-            nav.site-navigation.flex.justify-content-end.align-items-center
-              ul.flex.flex-column.flex-lg-row.justify-content-lg-end.align-content-center
-                li
-                  a(href='../') Trang chủ
-                li
-                  a(href='../courses') Các khóa học
-                li
-                  a(href='../about') Về chúng tôi
-                if checkLogged
-                  li.myUserk
-                    a(href="../users") Trang cá nhân 
-                  li 
-                    a#dangxuat(href="../") Đăng xuất
-              .hamburger-menu.d-lg-none
-                span
-                span
-                span
-                span
+                    a(href='../courses') Các khóa học
+                  li
+                    a(href='../about') Về chúng tôi
+                  if checkLogged
+                    li.myUserk
+                      a(href="../users") Trang cá nhân 
+                    li 
+                      a#dangxuat(href="../") Đăng xuất
+                .hamburger-menu.d-lg-none
+                  span
+                  span
+                  span
+                  span
   
-block content
+  block content

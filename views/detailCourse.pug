@@ -1,16 +1,6 @@
 extends header-layout
 
 block content
-  link(rel='stylesheet', href='/stylesheets/flip.css')
-  link(rel='stylesheet', href='/stylesheets/customScrollbar.css')
-  .hero-content
-    .page-header-overlay
-      .container
-        .row  
-          .col-12
-            header.entry-header.text-center.text-white
-              h1= course[0].name_course
-
   br
   br
   //- phần chi tiết khóa học
@@ -38,7 +28,6 @@ block content
                   audio(controls='', hidden='')
                     source.soundLearn(src=item.url_sound , type='audio/ogg')
 
-  //- các khóa học khác
   br
   br
   .container
@@ -76,7 +65,6 @@ block content
                 footer.entry-footer.flex.justify-content-between.align-items-center
                   .course-cost
                     span.free-cost Free
-
 
   script(src='/javascripts/playSound.js')
   script(src='/javascripts/changeItemLearn.js')           
