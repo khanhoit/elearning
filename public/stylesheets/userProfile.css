@@ -19,3 +19,13 @@
 .myOnChange{
   background: #c2c2c2;
 }
+
+/* 100 */
+@media screen and (max-width: 662px) {
+  .myuserProfile,.userTakeCourse{
+    width: 100% !important;
+  }
+  .nav-link{
+    text-align: center;
+  }
+}

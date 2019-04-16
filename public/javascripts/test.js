@@ -34,6 +34,7 @@ itemNext.addEventListener('click',nextQuestion);
 
 // next question
 function nextQuestion(){
+	console.log("curentIndex",curentIndex);
 	myTime=20;
 	idTime.textContent = myTime;
 	checkTimeTest();
@@ -45,7 +46,7 @@ function nextQuestion(){
 	for (let a = 0; a < answer.length; a++) {
 			answer[a].classList.remove('show');
 		}
-	if (curentIndex>=9) {
+	if (curentIndex==9) {
 		callModel.click();
 		clearInterval(a);
 		return;
@@ -63,7 +64,9 @@ function nextQuestion(){
 	curentIndex++;
 }
 // click answer
+var tkl=0;
 function kk(e,i){
+	console.log(tkl++);
 	if (numberClick!==0) {
 		return;
 	}
@@ -76,7 +79,7 @@ function kk(e,i){
 	answer[i].classList.add('myShow')
 	document.getElementsByClassName('itemFixedTrue')[0].classList.add('myShow');		
 	numberClick=1;
-	setTimeout(nextQuestion,3000);
+	setTimeout(nextQuestion,2000);
 }
 
 for (let i = 0 ; i < itemFixedTest.length; i++) {

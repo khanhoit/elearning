@@ -48,3 +48,16 @@
 .showhiddenIconUserHeader{
   display: inline-block !important;
 }
+
+@media screen and (max-width: 662px) {
+  .iconUserHeader ul{
+    display: inline-block;
+    position: initial !important;
+    width: 100% !important;
+    background:rgba(1,1,1,0) !important;
+    padding: 0px 30px;
+  }
+  .iconUserHeader ul li{
+    text-align: left;
+  }
+}
