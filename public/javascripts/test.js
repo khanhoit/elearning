@@ -105,8 +105,12 @@ playFixedTest.children[1].play();
 
 async function sendResultToServer(){
 	await fetch(window.location.href, {
-    method: 'post',
-    body: JSON.stringify({"resultTest":"123"})
+		method: 'post',
+		headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({"resultTest": myKqTest.textContent})
   }).then(function(response) {
     return response.json();
   }).then(function(data) {

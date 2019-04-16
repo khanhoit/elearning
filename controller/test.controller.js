@@ -24,16 +24,26 @@ module.exports.testGet=async function(req, res) {
   res.render('test',{difCourse,data,dataSetTest});
 }
 
+function myGetTime(){
+  var date = new Date();
+  var month = date.getMonth();
+  var day = date.getDay();
+  var year = date.getYear();
+  var hour= date.getHours();
+  var min= date.getMinutes();
+  return `${min}:${hour} - ${day}/${month}/${year}`;
+}
 module.exports.testPost=async function(req, res) {
-  console.log(req.body);
   const kqTest = req.body.resultTest;
+  console.log("kqTest",kqTest);
   let itemTestCourse = {'idUser': req.signedCookies.mkt_u,'idCourse': req.query.idCourse};
   let dataTestCourse= await testCourses.findOne(itemTestCourse);
   if(dataTestCourse){
-    dataTestCourse.score.push(kqTest["resultTest"]);
-    await testCourses.updateOne({itemTestCourse},dataTestCourse);
+    dataTestCourse["score"].push({kqTest,"date": myGetTime()});
+    console.log("score",dataTestCourse);
+    await testCourses.updateOne(itemTestCourse,dataTestCourse);
   }else{
-    await testCourses.create({...itemTestCourse,score:[kqTest]});
+    await testCourses.create({...itemTestCourse,score:[{kqTest, "date": myGetTime()}]});
   }
   res.json({ check: 'true' });
 }

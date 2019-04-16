@@ -4,7 +4,7 @@ block content
   //- resutl
   .container
     // Button trigger modal
-    p#callModel.btn.btn-primary(type='button', data-toggle='modal', data-target='#exampleModalCenter' hidden)
+    p#callModel.btn.btn-primary(type='button', data-toggle='modal', data-target='#exampleModalCenter' hidden )
       | kết quả
     // Modal
     form(action="abc.html" method="POST")
@@ -18,11 +18,9 @@ block content
             .modal-body#myKqTest
               | 
             .modal-footer
-              a#myPracticeOneMore(href="")
-                | làm lại
-              button.btn.btn-secondary.border-0(style="background-color: #0c390e;" type='submit', data-dismiss='modal') Lưu
-              a(href="123")
-                button.btn.btn-primary.border-0(type="button" style="background-color: #0c390e;") Làm lại 
+              button.btn.btn-secondary.border-0(style="background-color: #0c390e;" type='submit', data-dismiss='modal') Đóng
+              a#myPracticeOneMore.rounded.border-0(style="background-color: #0c390e; padding: 4px 10px;color: white; text-decoration: none;" href="")
+                | Làm lại
 
   .container
     div.text-right.m-2

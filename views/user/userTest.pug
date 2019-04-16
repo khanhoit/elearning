@@ -1,2 +1,25 @@
 block userTest
-  div hihi
+  .m-auto.userTakeCourse(style="width:70%")
+    .row
+      .col-12.my-3
+        h5 Các bài test đã làm
+      if myCourses.length!==0
+        each myCourse in oitKqTest
+          each itemScore in myCourse["score"] 
+            .col-12.my-3
+              a.text-dark(href='../test?idCourse=' + myCourse.id, style='text-decoration:none; ')
+                .card.flex-row.ml-3
+                  .card-header.border-0(style="width:30%")
+                    img(src=myCourse.img_baner, width='100%', alt='')
+                    h4.card-title= myCourse.name_course
+                  .card-block.p-2
+                    h3.card-text
+                      | Điểm số test: 
+                      span= itemScore["kqTest"]
+                    p.card-text= itemScore["date"]
+      else
+        .col-12.p-5.m-5
+          div.text-center 
+            p Bạn chưa tham làm bài test nào
+            //- a(href='../courses' style="color:#19c880;") Tham gia khóa học
+  
