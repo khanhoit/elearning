@@ -4,26 +4,26 @@ block content
   //- resutl
   .container
     // Button trigger modal
-    button.btn.btn-primary(type='button', data-toggle='modal', data-target='#exampleModalCenter')
-      | Launch demo modal
+    p#callModel.btn.btn-primary(type='button', data-toggle='modal', data-target='#exampleModalCenter' hidden )
+      | kết quả
     // Modal
     #exampleModalCenter.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
       .modal-dialog.modal-dialog-centered(role='document')
         .modal-content
           .modal-header
-            h5#exampleModalLongTitle.modal-title Modal title
+            h5#exampleModalLongTitle.modal-title Kết thúc bài test
             button.close(type='button', data-dismiss='modal', aria-label='Close')
               span(aria-hidden='true') &times;
           .modal-body
             | abc
           .modal-footer
-            button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-            button.btn.btn-primary(type='button') Save changes
+            button.btn.btn-secondary.border-0(style="background-color: #19c880" type='button', data-dismiss='modal') Đóng
+            button.btn.btn-primary.border-0(type="button" style="background-color: #19c880") Làm lại 
 
   .container
     div.text-right.m-2
       div.text-right.border.rounded-circle.d-inline-block.ml-auto(style="position:relative;width:45px; height:45px; border-color:#19c880 !important; color:#f3a90b !important")
-        span#idTime(style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);") 15
+        span#idTime(style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);") 
     #contain-FixedTest(style='display: flex; justify-content: space-between; margin: auto;')
       .itemFixedTest(style='margin: 10px;')
         img#a(src=`${data[dataSetTest[0][0]].url_img}`, width='100%')
@@ -60,7 +60,6 @@ block content
     #fixedOit(hidden) 0
     div(style='margin: 100px 0px;')
 
-
   //- các bài test
   link(rel='stylesheet', href='/stylesheets/test.css')
   .container(hidden)
@@ -91,8 +90,6 @@ block content
       br
       div(style='display: flex; justify-content: space-between; width: 60%; margin: auto;')
         audio.playTest(hidden='', src=`${data[item[itemTrue]].url_sound}`, controls='', type='audio/ogg')
-
-    
 
   //- các khóa học khác
   br
@@ -127,5 +124,6 @@ block content
                     a(href=`../detail?idCourse=${course.id}`)
                       button.btn.btn-primary.border-0(type="button" style="background-color: #19c880") Tham gia khóa học
   script(src='/javascripts/test.js')
-  //- 
+  
+  //- chân trang
   include ./footer.pug

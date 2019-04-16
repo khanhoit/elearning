@@ -25,11 +25,11 @@ body(style="")
             .col-12.col-lg-4.d-none.d-md-flex.flex-wrap.justify-content-center.justify-content-lg-start.mb-3.mb-lg-0
               .header-bar-email.d-flex.align-items-center
                 i.fa.fa-envelope
-                a(href='#') ez123@gmail.com
+                a(href='#') cdit@ptit.edu.vn
               .header-bar-text.lg-flex.align-items-center
                 p
                   i.fa.fa-phone
-                  | 19001000
+                  | (84-24) 3574 2856
             .col-12.col-lg-8.d-flex.flex-wrap.justify-content-center.justify-content-lg-end.align-items-center.border
               .header-bar-search
                 form.flex.align-items-stretch
@@ -62,14 +62,21 @@ body(style="")
                   li
                     a(href='../about') Về chúng tôi
                   if checkLogged
-                    li.myUserk
-                      a(href="../users") Trang cá nhân 
-                    li 
-                      a#dangxuat(href="../") Đăng xuất
+                    li.iconUserHeader
+                      a(href='#') 
+                        i.fas.fa-user
+                      ul.bg-dark.text-right(style="position:absolute; z-index:999; width:300%;left:-200%;") 
+                        li
+                          a(href="../users") 
+                            | Trang cá nhân 
+                        li
+                          a#dangxuat(href="../")
+                            | Đăng xuất
                 .hamburger-menu.d-lg-none
                   span
                   span
                   span
                   span
-  
+                  
+  script(src='/javascripts/hoverIconUser.js')
   block content

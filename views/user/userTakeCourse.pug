@@ -1,24 +1,22 @@
 block userTakeCourse
-.row
-  .col-12
-    h2 Các khóa học bạn đã tham gia
-  br
-  br
-  if myCourses
+  // Các khóa học đã tham gia
+  .m-auto(style="width:70%")
     .row
-      each myCourse in myCourses 
-        .col-sm-6.col-12.mb-4
-          .m-auto.border.p-2(style='width:70%;box-shadow:0px 1px 3px 1px #bebed8;')
+      .col-12.my-3
+        h5 Các khóa học đã tham gia
+      if myCourses.length!==0
+        each myCourse in myCourses 
+          .col-12.my-3
             a.text-dark(href='../detail?idCourse=' + myCourse.id, style='text-decoration:none; ')
-              img(src=myCourse.img_baner, width='100%', alt='')
-              h5= myCourse.name_course
-              p= myCourse.describe 
-              hr
-              // thông tin của t
-              div
-                p L&#x1EA7;n v&agrave;o cu&#x1ED1;i c&ugrave;ng
-                p ho&agrave;n th&agrave;nh bao nhi&ecirc;u ph&#x1EA7;n tr&abreve;m
-  else
-    div.text-center 
-      p Bạn chưa tham gia khóa học nào
-      a(href='../users/courses') Tham gia khóa học
+              .card.flex-row.ml-3
+                .card-header.border-0(style="width:30%")
+                  img(src=myCourse.img_baner, width='100%', alt='')
+                .card-block.p-2
+                  h4.card-title= myCourse.name_course
+                  p.card-text= myCourse.describe 
+      else
+        .col-12.p-5.m-5
+          div.text-center 
+            p Bạn chưa tham gia khóa học nào
+            a(href='../courses' style="color:#19c880;") Tham gia khóa học
+      

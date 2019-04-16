@@ -11,10 +11,9 @@ module.exports.userGet=async function(req, res) {
   }
   
   const myCourses = await Courses.find({id: {$in: user['mycourses']}})
-  console.log(user);
+  console.log('myCourses',myCourses);
   res.render('./user/index',{myCourses,user});
 }
-
 
 module.exports.userPost=async function(req, res) {
   var userCheck = {};
@@ -24,7 +23,7 @@ module.exports.userPost=async function(req, res) {
   await Users.updateOne({id: req.signedCookies.mkt_u},userCheck);
   const user =await Users.findOne({id: req.signedCookies.mkt_u});
   const myCourses = await Courses.find({id: {$in: user['mycourses']}});
-  
+
   res.render('./user/index',{myCourses,user});
 
 }

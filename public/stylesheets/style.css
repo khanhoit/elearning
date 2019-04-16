@@ -274,7 +274,6 @@ a:hover, a:active {
     z-index: 9999;
     width: 320px;
     height: 100%;
-    overflow-x: scroll;
     padding: 30px 15px;
     background: rgba(0,0,0,.9);
     transition: all 0.35s;
@@ -300,7 +299,6 @@ a:hover, a:active {
         width: 100%;
         height: auto;
         padding: 0;
-        overflow: auto;
         background: transparent;
     }
 }

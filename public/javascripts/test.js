@@ -9,6 +9,7 @@ const result = document.getElementById('result');
 const oit = document.getElementsByClassName('oit');
 const fixedOit = document.getElementById('fixedOit');
 const idTime = document.getElementById('idTime');
+const callModel = document.getElementById('callModel');
 
 var numberClick=0;
 var myTime = 20;
@@ -16,8 +17,11 @@ var a;
 // giới hạn thời gian 15s
 function checkTimeTest(){
 	a = setInterval(function(){
-		if(myTime==0){
+		if(curentIndex>=9){
 			clearInterval(a);
+			return;
+		}
+		if(myTime==0){
 			nextQuestion();
 			console.log('end');
 		}
@@ -27,6 +31,7 @@ function checkTimeTest(){
 checkTimeTest();
 
 itemNext.addEventListener('click',nextQuestion);
+
 // next question
 function nextQuestion(){
 	myTime=20;
@@ -40,7 +45,8 @@ function nextQuestion(){
 	for (let a = 0; a < answer.length; a++) {
 			answer[a].classList.remove('show');
 		}
-	if (curentIndex>9) {
+	if (curentIndex>=9) {
+		callModel.click();
 		clearInterval(a);
 		return;
 	}
@@ -56,12 +62,11 @@ function nextQuestion(){
 	playFixedTest.children[1].src = playTest[curentIndex].src;
 	curentIndex++;
 }
-
+// click answer
 function kk(e,i){
 	if (numberClick!==0) {
 		return;
 	}
-
 	if (i==(+fixedOit.textContent)) {
 		let kq = +result.textContent
 		result.textContent= ++kq;

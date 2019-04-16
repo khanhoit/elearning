@@ -3,18 +3,18 @@ extends header-layout
 block content
   // slider
   .container  
-    #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+    #carouselExampleIndicators.carousel.slide(data-ride='carousel' style="height:420px; overflow: hidden;")
       ol.carousel-indicators
         li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
         li(data-target='#carouselExampleIndicators', data-slide-to='1')
         li(data-target='#carouselExampleIndicators', data-slide-to='2')
       .carousel-inner
         .carousel-item.active
-          img.d-block.w-100(src='https://via.placeholder.com/1200x450?random=1', alt='First slide')
+          img.d-block.w-100(src='https://i.ibb.co/KqGGgK6/bn01.jpg', width="100%" alt='First slide')
         .carousel-item
-          img.d-block.w-100(src='https://via.placeholder.com/1200x450?random=2', alt='Second slide')
+          img.d-block.w-100(src='https://i.ibb.co/7WBbF34/bn02.jpg', width="100%" alt='Second slide')
         .carousel-item
-          img.d-block.w-100(src='https://via.placeholder.com/1200x450?random=3', alt='Third slide')
+          img.d-block.w-100(src='https://i.ibb.co/yp8TWdp/xongxoa.jpg', width="100%" alt='Third slide')
       a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
         span.carousel-control-prev-icon(aria-hidden='true')
         span.sr-only Previous
@@ -23,32 +23,32 @@ block content
         span.sr-only Next
                 
   // giới thiệu về ez
-  section.about-section
+  section.featured-courses.horizontal-column.courses-wrap
     .container
       .row
         .col-12.col-lg-6.align-content-lg-stretch
           header.heading
-            h2.entry-title Thông tin về Ez
+            h3.entry-title Thông tin về Ez
             p
               //- | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
           .entry-content.ezuca-stats(data-aos="fade-right")
             .stats-wrap.flex.flex-wrap.justify-content-lg-between
               .stats-count
-                | 1 triệu
+                | 1M+
                 span 
-                p Hơn học viên Tham gia
+                p Học viên tham gia
               .stats-count
-                | 30
+                | 30+
                 span 
-                p Hơn 30 khóa học
+                p Khóa học
               .stats-count
-                | 30
+                | 30K+
                 span 
-                p Sử dụng Ez hằng tháng
+                p Sử dụng hằng tháng
               .stats-count
-                | 3
+                | 10+
                 span
-                p Có mặt tỉnh thành trong cả nước
+                p Tỉnh thành trong cả nước
         .col-12.col-lg-6.flex.align-content-center.mt-5.mt-lg-0(data-aos="fade-left")
           .ezuca-video.position-relative
             img(src='images/video-screenshot.png', alt='')
@@ -83,6 +83,66 @@ block content
                   a.btn.text-white.btn-primary.border-0(style="background:#34d986;" href=`../learnTry?idCourse=${course.id}`) Học thử
                 else
                   a.btn.text-white.btn-primary.border-0(style="background:#34d986;" href=`../detail?idCourse=${course.id}`) Tham gia khóa học
+  
+  // đánh giá
+  section.featured-courses.horizontal-column.courses-wrap
+    .container
+      .row
+        .col-12
+          header.heading.flex.justify-content-center.align-items-center.flex-column.flex-lg-row
+            h3.entry-title.text-center Phản hồi của phụ huynh
+            br
+  .bd-example
+    #carouselExampleCaptions.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators(hidden='')
+        li.active(data-target='#carouselExampleCaptions', data-slide-to='0')
+        li(data-target='#carouselExampleCaptions', data-slide-to='1')
+        li(data-target='#carouselExampleCaptions', data-slide-to='2')
+      .carousel-inner
+        .carousel-item.active
+          .m-auto.position-relative(style='width: 300px')
+            img.d-block.w-100.rounded-circle(src='https://i.ibb.co/K5hHdC0/phuynh01.jpg', width='100%', alt='...')
+          br
+          .text-center.text-muted
+            h5.position-relative
+              span(style='color:#19c880; ') &quot;
+              | &#x9;&#x9;R&#x1EA5;t vui v&igrave; bi&#x1EBF;t &dstrok;&#x1EBF;n EZ. 
+              br
+              | &#x9;&#x9;&#x9;&#x9;M&#x1ED9;t trang h&#x1ECD;c tr&#x1EF1;c tuy&#x1EBF;n hi&#x1EC7;u qu&#x1EA3; 
+              br
+              |  &#x9;&#x9;&#x9;&#x9;v&#x1EDB;i chi ph&iacute; ph&ugrave; h&#x1EE3;p
+              span(style='color:#19c880;') &quot;
+        .carousel-item
+          .m-auto.position-relative(style='width: 300px')
+            img.d-block.w-100.rounded-circle(src='https://i.ibb.co/LRpCZtv/phuhuynh03.jpg', alt='...')
+          br
+          .text-center.text-muted
+            h5
+              span(style='color:#19c880;') &quot;
+              | &#x9;&#x9;EZ l&agrave; m&#x1ED9;t website tuy&#x1EC7;t v&#x1EDD;i 
+              br
+              | &#x9;&#x9;&#x9;&#x9;cho c&aacute;c b&eacute; h&#x1ECD;c ti&#x1EBF;ng anh
+              span(style='color:#19c880;') &quot;
+        .carousel-item
+          .m-auto.position-relative(style='width: 300px')
+            img.d-block.w-100.rounded-circle(src='https://i.ibb.co/WsSQ9j4/chuyengia02.jpg', alt='...')
+          br
+          .text-center.text-muted
+            h5
+              span(style='color:#19c880; ') &quot;
+              |  &#x9;&#x9;B&eacute; h&#x1ECD;c ti&#x1EBF;ng anh tr&ecirc;n EZ th&#x1EF1;c s&#x1EF1; r&#x1EA5;t hi&#x1EC7;u qu&#x1EA3; 
+              br
+              | &#x9;&#x9;&#x9; &#x9;nh&#x1EDD; h&igrave;nh &#x1EA3;nh sinh &dstrok;&#x1ED9;ng, tr&#x1EE5;c quan, 
+              br
+              | &#x9;&#x9;&#x9; &#x9;n&#x1ED9;i dung r&#x1EA5;t hay v&agrave; ph&ugrave; h&#x1EE3;p v&#x1EDB;i c&aacute;c b&eacute; 
+              span(style='color:#19c880;') &quot;
+      a.carousel-control-prev(href='#carouselExampleCaptions', role='button', data-slide='prev' hidden)
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.sr-only Previous
+      a.carousel-control-next(href='#carouselExampleCaptions', role='button', data-slide='next' hidden)
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.sr-only Next
+
   // các khóa học liên quan video
   section.featured-courses.horizontal-column.courses-wrap
     .container
@@ -96,15 +156,40 @@ block content
         .col-12.col-lg-6
           div 
             iframe(width='100%', height='320', src='https://www.youtube.com/embed/O9ium6cfkKY', frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='true')
-        
-  // đánh giá
+
+  // Các chuyên gia
+  section.featured-courses.horizontal-column.courses-wrap
+    .container
+      .row
+        .col-12
+            header.heading.flex.justify-content-between.align-items-center.flex-column.flex-lg-row
+              h3.entry-title.text-center Đội ngũ chuyên gia
+        .col-12.col-md-6.col-lg-4
+          .team-member
+            img(src='https://i.ibb.co/2dyQYLz/mrTu.jpg', alt='chuyên gia')
+            h3 Phạm Vũ Minh Tú
+            h4 Gv Khoa đa phương tiện 
+        .col-12.col-md-6.col-lg-4
+          .team-member
+            img(src='https://i.ibb.co/J5TMyCC/missHue.jpg', alt='chuyên gia')
+            h3 Bùi Thu Huế
+            h4 Gv Khoa đa phương tiện 
+        .col-12.col-md-6.col-lg-4
+          .team-member
+            img(src='https://i.ibb.co/ZWyK2gG/miss-Ngancrop.jpg', alt='chuyên gia')
+            h3 Hà Thị Hồng Ngân
+            h4 Gv Khoa đa phương tiện 
+  
+  // Địa chỉ trên bản đồ
   br
-  br
+  section.featured-courses.horizontal-column.courses-wrap
+    .container
+      .row
+        .col-12
+            header.heading.flex.justify-content-between.align-items-center.flex-column.flex-lg-row
+              h3.entry-title.text-center Trụ sở chính
   .container
-    h2.entry-title(style="margin: 0;font-size: 42px;font-weight: 400;") Địa chỉ của chúng tôi
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.2819637057883!2d105.78529261445385!3d20.98133159477277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accdcf7b0bd1%3A0xc1cf5dd00247628a!2zSOG7jWMgVmnhu4duIEPDtG5nIG5naOG7hyBCxrB1IENow61uaCBWaeG7hW4gVGjDtG5n!5e0!3m2!1svi!2s!4v1555235158015!5m2!1svi!2s" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.2819637057883!2d105.78529261445385!3d20.98133159477277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accdcf7b0bd1%3A0xc1cf5dd00247628a!2zSOG7jWMgVmnhu4duIEPDtG5nIG5naOG7hyBCxrB1IENow61uaCBWaeG7hW4gVGjDtG5n!5e0!3m2!1svi!2s!4v1555235158015!5m2!1svi!2s" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-
+  // footer website
   include footer.pug
-
-//- extends footer

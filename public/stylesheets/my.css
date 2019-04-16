@@ -36,3 +36,15 @@
   cursor: pointer;
   opacity: 0.6;
 }
+
+/* user on header  */
+.iconUserHeader{
+  position: relative;
+}
+.iconUserHeader ul{
+  display: none;
+}
+
+.showhiddenIconUserHeader{
+  display: inline-block !important;
+}

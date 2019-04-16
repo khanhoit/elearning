@@ -1,12 +1,13 @@
 extends header-layout
 
 block content
-  //- các ưu điểm
+
+  // các ưu điểm
   .container
     .row
       .col-12
         .about-heading
-          h2.entry-title Chào mừng bạn đến với Ez
+          h3.entry-title Chào mừng bạn đến với Ez
           p
             | Thế giới học tiếng anh cho trẻ em với phương pháp phù hợp cho trẻ nhỏ
       .col-12.col-lg-6
@@ -41,49 +42,46 @@ block content
               span
                 i.fas.fa-check.mr-3(style="color:#19c880;") 
               | Giao diện đẹp thu hút sự chú ý của trẻ nhỏ
-    .container
-      .row
-        .col-12
-          .about-heading
-            h2.entry-title Đội ngũ phát triển
-        .col-12.col-md-6.col-lg-3
-          .team-member
-            img(src='images/team-1.jpg', alt='')
-            h3 Nguyễn văn A 
-            h4 thạc sỹ, giáo sư
-        .col-12.col-md-6.col-lg-3
-          .team-member
-            img(src='images/team-1.jpg', alt='')
-            h3 Nguyễn văn A 
-            h4 thạc sỹ, giáo sư
-        .col-12.col-md-6.col-lg-3
-          .team-member
-            img(src='images/team-1.jpg', alt='')
-            h3 Nguyễn văn A 
-            h4 thạc sỹ, giáo sư
-        .col-12.col-md-6.col-lg-3
-          .team-member
-            img(src='images/team-1.jpg', alt='')
-            h3 Nguyễn văn A 
-            h4 thạc sỹ, giáo sư
+
+  // đội ngũ chuyên gia
   br
-  br 
-  h2.text-center Các nhà tài trợ
+  h3.text-center Đội ngũ chuyên gia
+  .container
+    .row
+      .col-12.col-md-6.col-lg-4
+        .team-member
+          img(src='https://i.ibb.co/2dyQYLz/mrTu.jpg', alt='chuyên gia')
+          h3 Phạm Vũ Minh Tú
+          h4 Gv Khoa đa phương tiện 
+      .col-12.col-md-6.col-lg-4
+        .team-member
+          img(src='https://i.ibb.co/J5TMyCC/missHue.jpg', alt='chuyên gia')
+          h3 Bùi Thu Huế
+          h4 Gv Khoa đa phương tiện 
+      .col-12.col-md-6.col-lg-4
+        .team-member
+          img(src='https://i.ibb.co/ZWyK2gG/miss-Ngancrop.jpg', alt='chuyên gia')
+          h3 Hà Thị Hồng Ngân
+          h4 Gv Khoa đa phương tiện 
+  
+
+  // các nhà tài trợ chính
   br
-  .contain-sponser.border()
+  h3.text-center Các nhà tài trợ
+  .contain-sponser
     .container.pt-2.pb-2
       .row
-        .col-12.flex.flex-wrap.justify-content-center.justify-content-lg-between.align-items-center
-          .logo-wrap
-            img(src='images/logo-1.png', alt='')
-          .logo-wrap
-            img(src='images/logo-2.png', alt='')
-          .logo-wrap
-            img(src='images/logo-3.png', alt='')
-          .logo-wrap
-            img(src='images/logo-4.png', alt='')
-          .logo-wrap
-            img(src='images/logo-5.png', alt='')
+        //- .col-12.flex.flex-wrap.justify-content-center.justify-content-lg-between.align-items-center
+        //-   .logo-wrap
+        //-     img(src='images/logo-1.png', alt='')
+        //-   .logo-wrap
+        //-     img(src='images/logo-2.png', alt='')
+        //-   .logo-wrap
+        //-     img(src='images/logo-3.png', alt='')
+        //-   .logo-wrap
+        //-     img(src='images/logo-4.png', alt='')
+        //-   .logo-wrap
+        //-     img(src='images/logo-5.png', alt='')
     br
     br
   include ./footer.pug
