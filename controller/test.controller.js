@@ -14,6 +14,14 @@ function createDataTest(numberMax, preNumber){
 		return dataRow;
 }
 module.exports.testGet=async function(req, res) {
+  var kqTest = {};
+  for (const key in req.query) {
+      kqTest[key] = req.query[key];
+  }
+  if(!(resultTest in kqTest)){
+    console.log('none')
+  }
+
   let difCourse = (await Courses.find()).filter(item=>item.id!==req.query.idCourse);
   const {data} = await detailCourses.findOne({"id":req.query.idCourse});
   const dataSetTestRow = Array.from({length:10});
@@ -21,6 +29,6 @@ module.exports.testGet=async function(req, res) {
   console.log('test',dataSetTest);
 
   difCourse= difCourse.slice(0,3);
-  console.log(data);
+  console.log("kqTest",kqTest);
   res.render('test',{difCourse,data,dataSetTest});
 }

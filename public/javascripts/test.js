@@ -10,34 +10,34 @@ const oit = document.getElementsByClassName('oit');
 const fixedOit = document.getElementById('fixedOit');
 const idTime = document.getElementById('idTime');
 const callModel = document.getElementById('callModel');
-
+const myKqTest = document.getElementById('myKqTest');
+const myPracticeOneMore = document.getElementById('myPracticeOneMore');
 var numberClick=0;
 var myTime = 20;
 var a;
 // giới hạn thời gian 15s
 function checkTimeTest(){
-	a = setInterval(function(){
-		if(curentIndex>=9){
+	console.log("checkTimeTest",curentIndex);
+		a = setInterval(function(){
+		if(curentIndex==10){
 			clearInterval(a);
+			idTime.textContent = 0;
 			return;
 		}
 		if(myTime==0){
 			nextQuestion();
-			console.log('end');
 		}
 		idTime.textContent = --myTime + "";
-	},1000);
+		},1000);
 }
 checkTimeTest();
-
-itemNext.addEventListener('click',nextQuestion);
+// itemNext.addEventListener('click',nextQuestion);
 
 // next question
 function nextQuestion(){
 	console.log("curentIndex",curentIndex);
 	myTime=20;
 	idTime.textContent = myTime;
-	checkTimeTest();
 	idTime.textContent = myTime + "";
 	const answerTrue = '<div class="answer itemFixedTrue"><b><i class="fas fa-check"></i></b></div>';
 	const answerFalse = '<div class="answer itemFixedFalse"><b><i class="fas fa-times"></i></b></div>'
@@ -46,9 +46,11 @@ function nextQuestion(){
 	for (let a = 0; a < answer.length; a++) {
 			answer[a].classList.remove('show');
 		}
-	if (curentIndex==9) {
+	if (curentIndex==10) {
+		// đáp án cuối cùng lấy ra số câu đúng
+		myKqTest.textContent = result.textContent;
+		sendResultToServer();
 		callModel.click();
-		clearInterval(a);
 		return;
 	}
 	for (let i = 0; i < itemFixedTest.length; i++) {
@@ -64,17 +66,15 @@ function nextQuestion(){
 	curentIndex++;
 }
 // click answer
-var tkl=0;
 function kk(e,i){
-	console.log(tkl++);
 	if (numberClick!==0) {
 		return;
 	}
 	if (i==(+fixedOit.textContent)) {
 		let kq = +result.textContent
 		result.textContent= ++kq;
+		console.log('true');
 	}else{
-		console.log('false');
 	}
 	answer[i].classList.add('myShow')
 	document.getElementsByClassName('itemFixedTrue')[0].classList.add('myShow');		
@@ -88,11 +88,21 @@ for (let i = 0 ; i < itemFixedTest.length; i++) {
 	},false)
 }
 
+
 // playsound
 function fncPlaySoundTest(){
 	const playSound= this.children[1];
 	playSound.load();
 	playSound.play();
-	console.log(playSound);
+	console.log("playSound");
 }
 playFixedTest.addEventListener('click',fncPlaySoundTest);
+
+// playsound 
+playFixedTest.children[1].load();
+playFixedTest.children[1].play();
+(fncPlaySoundTest.bind(playFixedTest))();
+
+async function sendResultToServer(){
+	window.location.href = window.location.href + '&resultTest='+result.textContent;
+}

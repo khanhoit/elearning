@@ -1,4 +1,3 @@
-
 function playSound(e){
   document.getElementById('myPlay').play();
 }
@@ -9,5 +8,5 @@ for (let i = 0; i < playSoundItems.length; i++) {
   playSoundItems[i].addEventListener("click", playSound,true);
 }
 
-console.log('playsound');
+
 
