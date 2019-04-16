@@ -21,7 +21,49 @@ block content
       a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
         span.carousel-control-next-icon(aria-hidden='true')
         span.sr-only Next
-                
+    // Chào mừng bạn đến với Ez
+  
+  // chào mừng đến với ez
+  .container
+    .row
+      .col-12
+        .about-heading
+          h3.entry-title Chào mừng bạn đến với Ez
+          p
+            | Thế giới học tiếng anh cho trẻ em với phương pháp phù hợp cho trẻ nhỏ
+      .col-12.col-lg-6
+        .about-stories
+          h3 Các ưu điểm của Ez
+          ul.p-0.m-0.list-unstyled
+            li.pt-3 
+              span
+                i.fas.fa-check.mr-3(style="color:#0c390e;") 
+              | Các khóa học được tạo bởi các chuyên gia
+            li.pt-3
+              span
+                i.fas.fa-check.mr-3(style="color:#0c390e;") 
+              | Phương pháp phù hợp nhất với trẻ nhở
+            li.pt-3
+              span
+                i.fas.fa-check.mr-3(style="color:#0c390e;") 
+              | Có thể học ở mọi lúc mọi nơi
+      .col-12.col-lg-6
+        .about-values
+          h3 Các ưu điểm của Ez
+          ul.p-0.m-0.list-unstyled
+            li.pt-3
+              span
+                i.fas.fa-check.mr-3(style="color:#0c390e;") 
+              | Nhiều khóa học miễn phí
+            li.pt-3
+              span
+                i.fas.fa-check.mr-3(style="color:#0c390e;") 
+              | Các khóa học đa dạng
+            li.pt-3
+              span
+                i.fas.fa-check.mr-3(style="color:#0c390e;") 
+              | Giao diện đẹp thu hút sự chú ý của trẻ nhỏ
+              
   // giới thiệu về ez
   section.featured-courses.horizontal-column.courses-wrap
     .container
@@ -33,19 +75,19 @@ block content
               //- | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
           .entry-content.ezuca-stats(data-aos="fade-out")
             .stats-wrap.flex.justify-content-lg-between
-              .stats-count
+              .stats-count(style="color:#0c390e;")
                 | 1M+
                 span 
                 p Học viên tham gia
-              .stats-count
+              .stats-count(style="color:#0c390e;")
                 | 30+
                 span 
                 p Khóa học
-              .stats-count
+              .stats-count(style="color:#0c390e;")
                 | 30K+
                 span 
                 p Sử dụng hằng tháng
-              .stats-count
+              .stats-count(style="color:#0c390e;")
                 | 10+
                 span
                 p Tỉnh thành trong cả nước
@@ -60,7 +102,7 @@ block content
         .col-12
           header.heading.flex.justify-content-between.align-items-center.flex-column.flex-lg-row
             h3.entry-title.text-center Các khóa học nổi bật
-            a.btn.mt-4.mt-sm-0(href='../courses') 
+            a.btn.mt-4.mt-sm-0(href='../courses')(style="border-color:#0c390e;")
               | Xem tất cả
               i.fas.fa-arrow-right
         each course in dataCourse
@@ -80,9 +122,9 @@ block content
                 p
                   b price
                 if !checkLogged
-                  a.btn.text-white.btn-primary.border-0(style="background:#34d986;" href=`../learnTry?idCourse=${course.id}`) Học thử
+                  a.btn.text-white.btn-primary.border-0(style="background:#0c390e;" href=`../learnTry?idCourse=${course.id}`) Học thử
                 else
-                  a.btn.text-white.btn-primary.border-0(style="background:#34d986;" href=`../detail?idCourse=${course.id}`) Tham gia khóa học
+                  a.btn.text-white.btn-primary.border-0(style="background:#0c390e;" href=`../detail?idCourse=${course.id}`) Tham gia khóa học
   
   // đánh giá
   section.featured-courses.horizontal-column.courses-wrap
@@ -105,37 +147,37 @@ block content
           br
           .text-center.text-muted
             p(style="font-size: 1.2rem")
-              span(style='color:#19c880; ') &quot;
+              span(style='color:#0c390e; ') &quot;
               | &#x9;&#x9;R&#x1EA5;t vui v&igrave; bi&#x1EBF;t &dstrok;&#x1EBF;n EZ. 
               br
               | &#x9;&#x9;&#x9;&#x9;M&#x1ED9;t trang h&#x1ECD;c tr&#x1EF1;c tuy&#x1EBF;n hi&#x1EC7;u qu&#x1EA3; 
               br
               |  &#x9;&#x9;&#x9;&#x9;v&#x1EDB;i chi ph&iacute; ph&ugrave; h&#x1EE3;p
-              span(style='color:#19c880;') &quot;
+              span(style='color:#0c390e;') &quot;
         .carousel-item
           .m-auto.position-relative(style='width: 300px')
             img.d-block.w-100.rounded-circle(src='https://i.ibb.co/LRpCZtv/phuhuynh03.jpg', alt='...')
           br
           .text-center.text-muted
             p(style="font-size: 1.2rem")
-              span(style='color:#19c880;') &quot;
+              span(style='color:#0c390e;') &quot;
               | &#x9;&#x9;EZ l&agrave; m&#x1ED9;t website tuy&#x1EC7;t v&#x1EDD;i 
               br
               | &#x9;&#x9;&#x9;&#x9;cho c&aacute;c b&eacute; h&#x1ECD;c ti&#x1EBF;ng anh
-              span(style='color:#19c880;') &quot;
+              span(style='color:#0c390e;') &quot;
         .carousel-item
           .m-auto.position-relative(style='width: 300px')
             img.d-block.w-100.rounded-circle(src='https://i.ibb.co/WsSQ9j4/chuyengia02.jpg', alt='...')
           br
           .text-center.text-muted
             p(style="font-size: 1.2rem")
-              span(style='color:#19c880; ') &quot;
+              span(style='color:#0c390e; ') &quot;
               |  &#x9;&#x9;B&eacute; h&#x1ECD;c ti&#x1EBF;ng anh tr&ecirc;n EZ th&#x1EF1;c s&#x1EF1; r&#x1EA5;t hi&#x1EC7;u qu&#x1EA3; 
               br
               | &#x9;&#x9;&#x9; &#x9;nh&#x1EDD; h&igrave;nh &#x1EA3;nh sinh &dstrok;&#x1ED9;ng, tr&#x1EE5;c quan, 
               br
               | &#x9;&#x9;&#x9; &#x9;n&#x1ED9;i dung r&#x1EA5;t hay v&agrave; ph&ugrave; h&#x1EE3;p v&#x1EDB;i c&aacute;c b&eacute; 
-              span(style='color:#19c880;') &quot;
+              span(style='color:#0c390e;') &quot;
       a.carousel-control-prev(href='#carouselExampleCaptions', role='button', data-slide='prev' hidden)
         span.carousel-control-prev-icon(aria-hidden='true')
         span.sr-only Previous

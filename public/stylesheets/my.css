@@ -9,12 +9,12 @@
 }
 
 .carousel-indicators .active{
-  background-color: #19c880 !important;
+  background-color: #0c390e !important;
 }
 
 /* tabs index user */
 .containInforUser .active{
-  background-color: #19c880 !important;
+  background-color: #0c390e !important;
   color: white !important;
 }
 

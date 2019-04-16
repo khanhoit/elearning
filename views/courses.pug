@@ -21,10 +21,10 @@ block content
                 .course-cost
                   if !checkLogged
                     a(href=`../learnTry?idCourse=${course.id}`)
-                      button.btn.btn-primary.border-0(type="button" style="background-color: #19c880") Học thử
+                      button.btn.btn-primary.border-0(type="button" style="background-color: #0c390e;") Học thử
                   else
                     a(href=`../detail?idCourse=${course.id}`)
-                      button.btn.btn-primary.border-0(type="button" style="background-color: #19c880") Tham gia khóa học
+                      button.btn.btn-primary.border-0(type="button" style="background-color: #0c390e;") Tham gia khóa học
                 .course-ratings.flex.justify-content-end.align-items-center
                   span.fa.fa-star.checked
                   span.fa.fa-star.checked

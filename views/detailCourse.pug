@@ -13,7 +13,7 @@ block content
               img#img_for_item(src=data[0].url_img, width='50%', alt='')
             //- #text_for_item.back= data[0].text
           .playSounditem.text-center.m-5.p-3(style='height:fit-content;')
-            i.fas.fa-volume-up(style="font-size:3rem;color:#19c880")
+            i.fas.fa-volume-up(style="font-size:3rem;color:#0c390e;")
             audio#myPlay(controls='', hidden='')
               source#sound_for_item(src=data[0].url_sound , type='audio/ogg')
       .col-sm-4.col-12
@@ -61,10 +61,10 @@ block content
                 .course-cost
                   if !checkLogged
                     a(href=`../learnTry?idCourse=${course.id}`)
-                      button.btn.btn-primary.border-0(type="button" style="background-color: #19c880") Học thử
+                      button.btn.btn-primary.border-0(type="button" style="background-color: #0c390e;") Học thử
                   else
                     a(href=`../detail?idCourse=${course.id}`)
-                      button.btn.btn-primary.border-0(type="button" style="background-color: #19c880") Tham gia khóa học
+                      button.btn.btn-primary.border-0(type="button" style="background-color: #0c390e;") Tham gia khóa học
 
   script(src='/javascripts/playSound.js')
   script(src='/javascripts/changeItemLearn.js')           

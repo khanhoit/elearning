@@ -4,5 +4,6 @@ var controller = require('../controller/test.controller');
 
 // test 
 router.get('/',controller.testGet);
+router.post('/',controller.testPost);
 
 module.exports = router;

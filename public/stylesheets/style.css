@@ -636,7 +636,7 @@ a:hover, a:active {
 
 a.btn {
     padding: 16px 28px;
-    border: 2px solid #34d986;
+    border: 2px solid #0c390e;
     border-radius: 0;
     font-size: 13px;
     font-weight: bold;
@@ -649,7 +649,7 @@ a.btn {
 
 a.btn:hover {
     color: #fff;
-    background: #34d986;
+    background: #0c390e;
 }
 
 /*
@@ -1957,7 +1957,7 @@ ul.black-doted {
 .team-member h4 {
     font-size: 16px;
     font-weight: 400;
-    color: #19c880;
+    color: #0c390e;
 }
 
 .team-member ul {

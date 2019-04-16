@@ -1,6 +1,7 @@
 var Users = require('../models/users.model');
 var Courses = require('../models/courses.model');
 var detailCourses = require('../models/detailCourses.model');
+var testCourses = require('../models/testCourse.model');
 
 function createDataTest(numberMax, preNumber){
   let dataRow=[];
@@ -14,21 +15,25 @@ function createDataTest(numberMax, preNumber){
 		return dataRow;
 }
 module.exports.testGet=async function(req, res) {
-  var kqTest = {};
-  for (const key in req.query) {
-      kqTest[key] = req.query[key];
-  }
-  if(!(resultTest in kqTest)){
-    console.log('none')
-  }
-
   let difCourse = (await Courses.find()).filter(item=>item.id!==req.query.idCourse);
   const {data} = await detailCourses.findOne({"id":req.query.idCourse});
   const dataSetTestRow = Array.from({length:10});
   const dataSetTest = dataSetTestRow.map(()=>createDataTest(data.length,12));
-  console.log('test',dataSetTest);
-
+  
   difCourse= difCourse.slice(0,3);
-  console.log("kqTest",kqTest);
   res.render('test',{difCourse,data,dataSetTest});
+}
+
+module.exports.testPost=async function(req, res) {
+  console.log(req.body);
+  const kqTest = req.body.resultTest;
+  let itemTestCourse = {'idUser': req.signedCookies.mkt_u,'idCourse': req.query.idCourse};
+  let dataTestCourse= await testCourses.findOne(itemTestCourse);
+  if(dataTestCourse){
+    dataTestCourse.score.push(kqTest["resultTest"]);
+    await testCourses.updateOne({itemTestCourse},dataTestCourse);
+  }else{
+    await testCourses.create({...itemTestCourse,score:[kqTest]});
+  }
+  res.json({ check: 'true' });
 }

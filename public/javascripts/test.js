@@ -49,8 +49,8 @@ function nextQuestion(){
 	if (curentIndex==10) {
 		// đáp án cuối cùng lấy ra số câu đúng
 		myKqTest.textContent = result.textContent;
-		sendResultToServer();
 		callModel.click();
+		sendResultToServer();
 		return;
 	}
 	for (let i = 0; i < itemFixedTest.length; i++) {
@@ -104,5 +104,12 @@ playFixedTest.children[1].play();
 (fncPlaySoundTest.bind(playFixedTest))();
 
 async function sendResultToServer(){
-	window.location.href = window.location.href + '&resultTest='+result.textContent;
+	await fetch(window.location.href, {
+    method: 'post',
+    body: JSON.stringify({"resultTest":"123"})
+  }).then(function(response) {
+    return response.json();
+  }).then(function(data) {
+		console.log("ser res:", data);
+	});
 }
