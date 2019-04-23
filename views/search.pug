@@ -1,0 +1,41 @@
+extends header-layout
+
+block content
+  //- allcourse
+  .container
+    .row.mx-m-25
+      .col-12.mt-3
+        h5 Tất cả các khóa học
+      if rs.length>0  
+        each course in rs
+          .col-12.col-md-6.px-25
+            .course-content(data-aos="fade-up")
+              figure.course-thumbnail
+                img(src=`${course.img_baner}`, alt='')
+              .course-content-wrap
+                header.entry-header
+                  h2.entry-title= course.name_course
+                  .entry-meta.flex.flex-wrap.align-items-center
+                    .course-author  
+                    .course-create-date= course.describe
+                footer.entry-footer.flex.flex-wrap.justify-content-between.align-items-center
+                  .course-cost
+                    if !checkLogged
+                      a(href=`../learnTry?idCourse=${course.id}`)
+                        button.btn.btn-primary.border-0(type="button" style="background-color: #0c390e;") Học thử
+                    else
+                      a(href=`../detail?idCourse=${course.id}`)
+                        button.btn.btn-primary.border-0(type="button" style="background-color: #0c390e;") Tham gia khóa học
+                  .course-ratings.flex.justify-content-end.align-items-center
+                    span.fa.fa-star.checked
+                    span.fa.fa-star.checked
+                    span.fa.fa-star.checked
+                    span.fa.fa-star.checked
+                    span.fa.fa-star-o
+                    span.course-ratings-count (4 votes)
+      else
+        .col-12.py-5
+          b.py-5.d-block.text-center Không tìm thấy nội dung phù hợp
+              
+  br
+  include ./footer.pug

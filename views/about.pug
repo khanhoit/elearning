@@ -71,17 +71,15 @@ block content
   .contain-sponser
     .container.pt-2.pb-2
       .row
-        //- .col-12.flex.flex-wrap.justify-content-center.justify-content-lg-between.align-items-center
-        //-   .logo-wrap
-        //-     img(src='images/logo-1.png', alt='')
-        //-   .logo-wrap
-        //-     img(src='images/logo-2.png', alt='')
-        //-   .logo-wrap
-        //-     img(src='images/logo-3.png', alt='')
-        //-   .logo-wrap
-        //-     img(src='images/logo-4.png', alt='')
-        //-   .logo-wrap
-        //-     img(src='images/logo-5.png', alt='')
+        .col-lg-4.col-12.text-center.text-lg-right
+          .logo-wrap
+            img(src='images/sponser1.png', alt='sponser1' width="50%")
+        .col-lg-4.col-12
+          .logo-wrap.text-center
+            img(src='images/sponser2.jpg', alt='sponser2' width="50%")
+        .col-lg-4.col-12
+          .logo-wrap.text-center.text-lg-left
+            img(src='images/sponser3.png', alt='sponser3' width="50%")
     br
     br
   include ./footer.pug

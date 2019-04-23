@@ -8,7 +8,6 @@ require('dotenv').config();
 
 mongoose.connect('mongodb+srv://user1:0000@cluster1-hopvw.mongodb.net/test?retryWrites=true', {useNewUrlParser: true});
 
-  
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
@@ -18,6 +17,7 @@ var aboutRouter = require('./routes/about');
 var allCourseRouter = require('./routes/allCourses');
 var testRouter = require('./routes/test');
 var learnTryRouter = require('./routes/learnTry');
+var searchRouter = require('./routes/search');
 
 var checkLoginMiddleware = require('./middleware/checkLogin.middleware');
 
@@ -34,6 +34,7 @@ app.use(cookieParser('sdkfsdjfsdkfj'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/',checkLoginMiddleware.checkLoggedIndex, indexRouter);
+app.use('/search',checkLoginMiddleware.checkLoggedIndex, searchRouter);
 app.use('/about',checkLoginMiddleware.checkLoggedIndex, aboutRouter);
 app.use('/learntry',checkLoginMiddleware.checkLoggedIndex, learnTryRouter);
 app.use('/courses',checkLoginMiddleware.checkLoggedIndex, allCourseRouter);
@@ -42,6 +43,7 @@ app.use('/test',checkLoginMiddleware.checkLoggedIndex, testRouter);
 app.use('/users',checkLoginMiddleware.requireLogin, usersRouter);
 app.use('/login',checkLoginMiddleware.checkLogged, loginRouter);
 app.use('/signup',checkLoginMiddleware.checkLogged, signupRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -11,7 +11,6 @@ block content
           .contain-card-learn.text-center
             .front
               img#img_for_item(src=data[0].url_img, width='50%', alt='')
-            //- #text_for_item.back= data[0].text
           .playSounditem.text-center.m-5.p-3(style='height:fit-content;')
             i.fas.fa-volume-up(style="font-size:3rem;color:#0c390e;")
             audio#myPlay(controls='', hidden='')
@@ -27,7 +26,6 @@ block content
                 .col-8.textLearn= item.text
                   audio(controls='', hidden='')
                     source.soundLearn(src=item.url_sound , type='audio/ogg')
-
   br
   br
   .container

@@ -32,9 +32,9 @@ body(style="")
                   | (84-24) 3574 2856
             .col-12.col-lg-8.d-flex.flex-wrap.justify-content-center.justify-content-lg-end.align-items-center.border
               .header-bar-search
-                form.flex.align-items-stretch
-                  input(type='search', placeholder='Tìm khóa học?')
-                  button.flex.justify-content-center.align-items-center(type='submit', value='')(style="background:#0c390e;")
+                form.flex.align-items-stretch(action="../search" method="get")
+                  input(type='search', placeholder='Tìm khóa học?' name="q")
+                  button.flex.justify-content-center.align-items-center(type='submit', value='' style="background:#0c390e;")
                     i.fa.fa-search
               .header-bar-menu
                 if !checkLogged

@@ -67,7 +67,7 @@ block content
   .container(hidden)
     each item,index in dataSetTest
       -var itemTrue=Math.floor(Math.random()*4);
-      .container-kk(style='display: flex; justify-content: space-between; margin: auto;')
+      .container-kk.d-flex.justify-content-between.m-auto
         .itemTest(style='margin: 10px;')
           img#a(src=`${data[item[0]].url_img}`, width='100%')
           .answer.itemFalse
@@ -90,7 +90,7 @@ block content
               i.fas.fa-times
       .oit= itemTrue
       br
-      div(style='display: flex; justify-content: space-between; width: 60%; margin: auto;')
+      div.d-flex.justify-content-between.m-auto(style='width: 60%;')
         audio.playTest(hidden='', src=`${data[item[itemTrue]].url_sound}`, controls='', type='audio/ogg')
 
   //- các khóa học khác

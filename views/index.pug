@@ -3,7 +3,7 @@ extends header-layout
 block content
   // slider
   .container  
-    #carouselExampleIndicators.carousel.slide(data-ride='carousel' style="height:420px; overflow: hidden;")
+    #carouselExampleIndicators.carousel.slide.overflow-hidden(data-ride='carousel' style="height:420px;")
       ol.carousel-indicators
         li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
         li(data-target='#carouselExampleIndicators', data-slide-to='1')
@@ -76,7 +76,6 @@ block content
           header.heading
             h2.entry-title.text-center.text-md-left(style="text-align:center !important;") Thông tin về Ez
             p
-              //- | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
           .entry-content.ezuca-stats(data-aos="fade-out")
             .stats-wrap.flex.justify-content-lg-between
               .stats-count(style="color:#0c390e;")
@@ -95,9 +94,6 @@ block content
                 | 10+
                 span
                 p Tỉnh thành trong cả nước
-        //- .col-12.col-lg-6.flex.align-content-center.mt-5.mt-lg-0(data-aos="fade-left")
-        //-   .ezuca-video.position-relative
-        //-     img(src='images/video-screenshot.png', alt='')
 
   // các khóa học nổi bật
   section.featured-courses.horizontal-column.courses-wrap
@@ -106,7 +102,7 @@ block content
         .col-12
           header.heading.flex.justify-content-between.align-items-center.flex-column.flex-lg-row
             h2.entry-title.text-center Các khóa học nổi bật
-            a.btn.mt-4.mt-sm-0(href='../courses')(style="border-color:#0c390e;")
+            a.btn.mt-4.mt-sm-0(href='../courses' style="border-color:#0c390e;")
               | Xem tất cả
               i.fas.fa-arrow-right
         each course in dataCourse

@@ -14,6 +14,7 @@ function createDataTest(numberMax, preNumber){
 		}
 		return dataRow;
 }
+
 module.exports.testGet=async function(req, res) {
   let difCourse = (await Courses.find()).filter(item=>item.id!==req.query.idCourse);
   const {data} = await detailCourses.findOne({"id":req.query.idCourse});
@@ -33,9 +34,9 @@ function myGetTime(){
   var min= date.getMinutes();
   return `${min}:${hour} - ${day}/${month}/${year}`;
 }
+
 module.exports.testPost=async function(req, res) {
   const kqTest = req.body.resultTest;
-  console.log("kqTest",kqTest);
   let itemTestCourse = {'idUser': req.signedCookies.mkt_u,'idCourse': req.query.idCourse};
   let dataTestCourse= await testCourses.findOne(itemTestCourse);
   if(dataTestCourse){
